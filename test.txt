@@ -1,0 +1,926 @@
+
+Query: aimine@hotmail.fr
+Date: 09/09/2026 05:00:16
+Total Databases: 40
+Total Entries: 64
+================================================================================
+
+
+********************************************************************************
+********************    CONTACT SUMMARY (KEY DATA)    ********************
+********************************************************************************
+
+  [EMAILS: 3 | USERNAMES: 4 | PASSWORDS: 13 | NAMES: 24 | PHONE NUMBERS: 5 | ADDRESSES: 23]
+
+  EMAILS:
+    -> aimine@hotmail.fr
+    -> maram112525@gmail.com
+    -> AIMINE@HOTMAIL.FR
+
+  USERNAMES:
+    -> aiminetiti
+    -> aimine
+    -> PSP:ENEH-CG9A | DOB:2010-11-25 | GENRE:F | SIT:Jeune | MAT:0597853
+    -> PSP:YS3G-X6HH | DOB:2008-01-04 | GENRE:F | SIT:Jeune | MAT:0597853
+
+  PASSWORDS:
+    -> 10171977
+    -> alejandro
+    -> ihe5ud
+    -> a1m1nyzuc
+    -> 26331788
+    -> 654321
+    -> @hotmail.fr
+    -> 123456
+    -> 15avril
+    -> 5iiul08t
+    -> 91mad5
+    -> @zerty5+
+    -> @hotmail.fr@
+
+  NAMES:
+    -> Full Name: lilia noui
+    -> First Name: lilia
+    -> Last Name: noui
+    -> Full Name: LILIA CHETTAB
+    -> First Name: LILIA
+    -> Last Name: CHETTAB
+    -> Full Name: NOUI CHETTAB
+    -> First Name: NOUI
+    -> Full Name: Lilia
+    -> First Name: Lilia
+    -> Full Name: ASSMA NOUI
+    -> Last Name: NOUI
+    -> Full Name: MARAM NOUI
+    -> Full Name: Undefined NOUI
+    -> Full Name: Assma NOUI
+    -> First Name: Assma
+    -> Full Name: Maram NOUI
+    -> First Name: Maram
+    -> First Name: MARAM
+    -> Full Name: LILIA
+    -> Full Name: NOUI
+    -> Full Name: MME NOUI LILIA
+    -> Full Name: LILIA NOUI
+    -> First Name: ASSMA
+
+  PHONE NUMBERS:
+    -> 611608860
+    -> 0951524227
+    -> 0783215037
+    -> 0611608860
+    -> 0695516316
+
+  ADDRESSES:
+    -> country: FR
+    -> city: thonon les bains
+    -> postal_code: 74200
+    -> city: THONON LES BAINS
+    -> city: THONON-LES-BAINS
+    -> ville: thonon les bains
+    -> code_postal: 74200
+    -> adresse: hlm collonges
+    -> address: hlm collonges
+    -> Adresse: hlm collonges
+    -> Ville: thonon les bains
+    -> Code_Postal: 74200
+    -> Pays: FRANCE
+    -> CodePostal: 74200
+    -> country: FRANCE
+    -> adresse voie: 21 AVENUE DE SENEVULAZ
+    -> adresse cplt_adresse: HLM COLLONGES ENTREE 8 N 3
+    -> adresse code_postal: 74200
+    -> adresse code_insee: 74281
+    -> adresse commune: THONON LES BAINS
+    -> address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+    -> address: 21 AVENUE DE SENEVULAZ
+    -> address: 8 HLM COLLONGES
+
+********************************************************************************
+
+
+================================================================================
+                          RAW DATA BY DATABASE
+================================================================================
+
+  ▸ BREACHES (13 databases)
+────────────────────────────────────────────────────────────────────────────────
+
+  [1] OathNet • darty.com — Breach Database
+        • email: aimine@hotmail.fr
+        • phone: 611608860
+        • full_name: lilia noui
+        • first_name: lilia
+        • last_name: noui
+        • country: FR
+        • city: thonon les bains
+        • postal_code: 74200
+
+  [2] OathNet • www.jeux-fille-gratuit.com — Breach Database
+        • email: aimine@hotmail.fr
+        • password: 10171977
+        • country: FR
+        • date: 2026-05-22T16:19:09Z
+
+  [3] OathNet • free.fr — Breach Database
+      Entry #1:
+        • email: aimine@hotmail.fr
+        • phone: 0951524227
+        • full_name: LILIA CHETTAB
+        • first_name: LILIA
+        • last_name: CHETTAB
+        • country: FR
+        • city: THONON LES BAINS
+        • postal_code: 74200
+        • date_birth: 1983-06-08
+      Entry #2:
+        • email: aimine@hotmail.fr
+        • phone: 0783215037
+        • full_name: NOUI CHETTAB
+        • first_name: NOUI
+        • last_name: CHETTAB
+        • country: FR
+        • city: THONON LES BAINS
+        • postal_code: 74200
+      Entry #3:
+        • email: aimine@hotmail.fr
+        • phone: 0611608860
+        • full_name: LILIA CHETTAB
+        • first_name: LILIA
+        • last_name: CHETTAB
+        • country: FR
+        • city: THONON LES BAINS
+        • postal_code: 74200
+        • date_birth: 1983-06-08
+
+  [4] OathNet • jeux-fille-gratuit.com — Breach Database
+        • email: aimine@hotmail.fr
+        • username: aiminetiti
+        • password: 10171977
+        • country: FR
+        • date_birth: 2021-01-01
+
+  [5] OathNet • meetic.com — Breach Database
+        • email: aimine@hotmail.fr
+        • full_name: Lilia
+        • first_name: Lilia
+        • country: FR
+        • date_birth: 1983-06-08
+
+  [6] OathNet • pass.sports.gouv.fr — Breach Database
+      Entry #1:
+        • email: aimine@hotmail.fr
+        • phone: 0611608860
+        • full_name: ASSMA NOUI
+        • first_name: LILIA
+        • last_name: NOUI
+        • country: FR
+        • city: THONON LES BAINS
+        • postal_code: 74200
+        • date_birth: 2008-01-04
+      Entry #2:
+        • email: aimine@hotmail.fr
+        • phone: 0611608860
+        • full_name: MARAM NOUI
+        • first_name: LILIA
+        • last_name: NOUI
+        • country: FR
+        • city: THONON LES BAINS
+        • postal_code: 74200
+        • date_birth: 2010-11-25
+
+  [7] OathNet • moncompteformation.gouv.fr — Breach Database
+        • email: aimine@hotmail.fr
+        • phone: 0611608860
+        • full_name: Undefined NOUI
+        • last_name: NOUI
+        • country: FR
+        • date: 2026-08-06T15:04:24Z
+
+  [8] OathNet • unknown — Breach Database
+      Entry #1:
+        • email: aimine@hotmail.fr
+        • phone: 0611608860
+        • full_name: Assma NOUI
+        • first_name: Assma
+        • last_name: NOUI
+        • country: FR
+        • city: THONON-LES-BAINS
+        • postal_code: 74200
+        • date_birth: 2008-01-04
+        • date: 2026-08-20T13:45:13Z
+      Entry #2:
+        • email: maram112525@gmail.com
+        • phone: 0695516316
+        • full_name: Maram NOUI
+        • first_name: Maram
+        • last_name: NOUI
+        • country: FR
+        • city: THONON-LES-BAINS
+        • postal_code: 74200
+        • date_birth: 2010-11-25
+        • date: 2026-08-20T13:45:23Z
+
+  [9] SeekNow Local • zenmobile.com — Local Database
+      Entry #1:
+        • id: 2,93084E+15
+        • nom: noui
+        • prenom: lilia
+        • civilite: Mme
+        • ville: thonon les bains
+        • code_postal: 74200
+        • adresse: hlm collonges
+        • tel1: 611608860
+        • mail: aimine@hotmail.fr
+        • date_naissance: 1983-06-08
+        • date_de_collect: 24/01/2022 16:18
+        • source_site: https://aide-scolaire.plein2kdo.com/
+        • fichier_nhy_chaud: 1
+        • qualification: HC Personne Fragile
+        • departement: DEP74
+        • idtab: 437189
+        • fournisseurs: WebRivage
+        • dernier_appel: 2023-01-05
+        • serveur: kpc.b
+        • equipe: NHY ORITEL
+        • email: aimine@hotmail.fr
+        • phone: 611608860
+        • name: lilia noui
+        • address: hlm collonges
+        • source_date: 1983-06-08
+      Entry #2:
+        • Nom: noui
+        • Prenom: lilia
+        • datenaissance: 08/06/1983
+        • Email: aimine@hotmail.fr
+        • phone: 0611608860
+        • Adresse: hlm collonges
+        • Ville: thonon les bains
+        • Code_Postal: 74200
+        • Qualification: HC Personne Fragile
+        • Date_de_Collect: 24/01/2022 16:18
+        • email: aimine@hotmail.fr
+        • name: lilia noui
+        • address: hlm collonges
+
+  [10] SeekNow Local • chronopost.fr — Local Database
+        • ProfileCL: Particulier
+        • NumeroClient: W8377694
+        • Identifiant: aimine
+        • Email: aimine@hotmail.fr
+        • Nom: noui
+        • Prenom: lilia
+        • Telephone: 611608860
+        • Adresse: hlm collonges
+        • Pays: FRANCE
+        • CodePostal: 74200
+        • Ville: thonon les bains
+        • identifiant: aimine
+        • DCGPCHN: 0WB26O392A
+        • email: aimine@hotmail.fr
+        • username: aimine
+        • phone: 611608860
+        • name: lilia noui
+        • address: hlm collonges
+        • country: FRANCE
+
+  [11] SeekNow Local • darty.com — Local Database
+        • email: aimine@hotmail.fr
+
+  [12] SeekNow Local • CAF — Local Database
+      Entry #1:
+        • id: 257135
+        • id_psp: ENEH-CG9A
+        • nom: NOUI
+        • prenom: MARAM
+        • date_naissance: 2010-11-25T00:00:00.000+01:00
+        • genre: F
+        • organisme: CAF
+        • situation: Jeune
+        • allocataire qualite: MME
+        • allocataire prenom: LILIA
+        • allocataire nom: NOUI
+        • allocataire courriel: AIMINE@HOTMAIL.FR
+        • allocataire telephone: 0611608860
+        • allocataire matricule: 0597853
+        • allocataire code_organisme: 741
+        • adresse nom_adresse_postale: MME NOUI LILIA
+        • adresse voie: 21 AVENUE DE SENEVULAZ
+        • adresse cplt_adresse: HLM COLLONGES ENTREE 8 N 3
+        • adresse code_postal: 74200
+        • adresse code_insee: 74281
+        • adresse commune: THONON LES BAINS
+        • created_at: 2022-09-01T00:00:00.000+02:00
+        • updated_at: 2022-09-01T00:00:00.000+02:00
+        • exercice_id: 1
+        • nom_complet: MARAM NOUI
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:ENEH-CG9A | DOB:2010-11-25 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: MARAM NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • dob: 2010-11-25
+        • zip: 74200
+        • first_name: MARAM
+        • last_name: NOUI
+        • city: THONON LES BAINS
+        • gender: F
+      Entry #2:
+        • id: 257135
+        • id_psp: ENEH-CG9A
+        • nom: NOUI
+        • prenom: MARAM
+        • date_naissance: 2010-11-25T00:00:00.000+01:00
+        • genre: F
+        • organisme: CAF
+        • situation: Jeune
+        • allocataire qualite: MME
+        • allocataire prenom: LILIA
+        • allocataire nom: NOUI
+        • allocataire courriel: AIMINE@HOTMAIL.FR
+        • allocataire telephone: 0611608860
+        • allocataire matricule: 0597853
+        • allocataire code_organisme: 741
+        • adresse nom_adresse_postale: MME NOUI LILIA
+        • adresse voie: 21 AVENUE DE SENEVULAZ
+        • adresse cplt_adresse: HLM COLLONGES ENTREE 8 N 3
+        • adresse code_postal: 74200
+        • adresse code_insee: 74281
+        • adresse commune: THONON LES BAINS
+        • created_at: 2022-09-01T00:00:00.000+02:00
+        • updated_at: 2022-09-01T00:00:00.000+02:00
+        • exercice_id: 1
+        • nom_complet: MARAM NOUI
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:ENEH-CG9A | DOB:2010-11-25 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: LILIA NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • dob: 2010-11-25
+        • zip: 74200
+        • first_name: MARAM
+        • last_name: NOUI
+        • city: THONON LES BAINS
+        • gender: F
+      Entry #3:
+        • id: 961212
+        • id_psp: YS3G-X6HH
+        • nom: NOUI
+        • prenom: ASSMA
+        • date_naissance: 2008-01-04T00:00:00.000+01:00
+        • genre: F
+        • organisme: CAF
+        • situation: Jeune
+        • allocataire qualite: MME
+        • allocataire prenom: LILIA
+        • allocataire nom: NOUI
+        • allocataire courriel: AIMINE@HOTMAIL.FR
+        • allocataire telephone: 0611608860
+        • allocataire matricule: 0597853
+        • allocataire code_organisme: 741
+        • adresse nom_adresse_postale: MME NOUI LILIA
+        • adresse voie: 21 AVENUE DE SENEVULAZ
+        • adresse cplt_adresse: HLM COLLONGES ENTREE 8 N 3
+        • adresse code_postal: 74200
+        • adresse code_insee: 74281
+        • adresse commune: THONON LES BAINS
+        • created_at: 2022-09-01T00:00:00.000+02:00
+        • updated_at: 2022-09-01T00:00:00.000+02:00
+        • exercice_id: 1
+        • nom_complet: ASSMA NOUI
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:YS3G-X6HH | DOB:2008-01-04 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: ASSMA NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • dob: 2008-01-04
+        • zip: 74200
+        • first_name: ASSMA
+        • last_name: NOUI
+        • city: THONON LES BAINS
+        • gender: F
+      Entry #4:
+        • id: 961212
+        • id_psp: YS3G-X6HH
+        • nom: NOUI
+        • prenom: ASSMA
+        • date_naissance: 2008-01-04T00:00:00.000+01:00
+        • genre: F
+        • organisme: CAF
+        • situation: Jeune
+        • allocataire qualite: MME
+        • allocataire prenom: LILIA
+        • allocataire nom: NOUI
+        • allocataire courriel: AIMINE@HOTMAIL.FR
+        • allocataire telephone: 0611608860
+        • allocataire matricule: 0597853
+        • allocataire code_organisme: 741
+        • adresse nom_adresse_postale: MME NOUI LILIA
+        • adresse voie: 21 AVENUE DE SENEVULAZ
+        • adresse cplt_adresse: HLM COLLONGES ENTREE 8 N 3
+        • adresse code_postal: 74200
+        • adresse code_insee: 74281
+        • adresse commune: THONON LES BAINS
+        • created_at: 2022-09-01T00:00:00.000+02:00
+        • updated_at: 2022-09-01T00:00:00.000+02:00
+        • exercice_id: 1
+        • nom_complet: ASSMA NOUI
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:YS3G-X6HH | DOB:2008-01-04 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: LILIA NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • dob: 2008-01-04
+        • zip: 74200
+        • first_name: ASSMA
+        • last_name: NOUI
+        • city: THONON LES BAINS
+        • gender: F
+      Entry #5:
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:ENEH-CG9A | DOB:2010-11-25 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: MARAM NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • zip: 74200
+        • first_name: LILIA
+        • last_name: NOUI
+      Entry #6:
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:ENEH-CG9A | DOB:2010-11-25 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: LILIA NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • zip: 74200
+        • first_name: LILIA
+        • last_name: NOUI
+      Entry #7:
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:YS3G-X6HH | DOB:2008-01-04 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: ASSMA NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • zip: 74200
+        • first_name: LILIA
+        • last_name: NOUI
+      Entry #8:
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:YS3G-X6HH | DOB:2008-01-04 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: LILIA NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • zip: 74200
+        • first_name: LILIA
+        • last_name: NOUI
+      Entry #9:
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:ENEH-CG9A | DOB:2010-11-25 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: MARAM NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • first_name: LILIA
+        • last_name: NOUI
+      Entry #10:
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:ENEH-CG9A | DOB:2010-11-25 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: LILIA NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • first_name: LILIA
+        • last_name: NOUI
+      Entry #11:
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:ENEH-CG9A | DOB:2010-11-25 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: MARAM NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • first_name: LILIA
+        • last_name: NOUI
+      Entry #12:
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:ENEH-CG9A | DOB:2010-11-25 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: LILIA NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • first_name: LILIA
+        • last_name: NOUI
+      Entry #13:
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:YS3G-X6HH | DOB:2008-01-04 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: ASSMA NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • first_name: LILIA
+        • last_name: NOUI
+      Entry #14:
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:YS3G-X6HH | DOB:2008-01-04 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: LILIA NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • first_name: LILIA
+        • last_name: NOUI
+      Entry #15:
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:ENEH-CG9A | DOB:2010-11-25 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: LILIA NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • dob: 2010-11-25
+        • first_name: MARAM
+        • last_name: NOUI
+        • gender: F
+      Entry #16:
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:ENEH-CG9A | DOB:2010-11-25 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: MARAM NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • dob: 2010-11-25
+        • first_name: MARAM
+        • last_name: NOUI
+        • gender: F
+      Entry #17:
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:YS3G-X6HH | DOB:2008-01-04 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: LILIA NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • dob: 2008-01-04
+        • first_name: ASSMA
+        • last_name: NOUI
+        • gender: F
+      Entry #18:
+        • email: AIMINE@HOTMAIL.FR
+        • username: PSP:YS3G-X6HH | DOB:2008-01-04 | GENRE:F | SIT:Jeune | MAT:0597853
+        • phone: 0611608860
+        • name: ASSMA NOUI
+        • address: 21 AVENUE DE SENEVULAZ, HLM COLLONGES ENTREE 8 N 3, 74200 THONON LES BAINS
+        • source_date: 2022-09-01
+        • country: FR
+        • dob: 2008-01-04
+        • first_name: ASSMA
+        • last_name: NOUI
+        • gender: F
+
+  [13] SeekNow Local • free.fr — Local Database
+      Entry #1:
+        • email: aimine@hotmail.fr
+        • phone: 0951524227
+        • address: 21 AVENUE DE SENEVULAZ
+        • zip: 74200
+        • first_name: LILIA
+        • last_name: CHETTAB
+        • city: THONON LES BAINS
+      Entry #2:
+        • email: aimine@hotmail.fr
+        • phone: 0783215037
+        • address: 8 HLM COLLONGES
+        • zip: 74200
+        • first_name: NOUI
+        • last_name: CHETTAB
+        • city: THONON LES BAINS
+      Entry #3:
+        • email: aimine@hotmail.fr
+        • phone: 0611608860
+        • address: 8 HLM COLLONGES
+        • zip: 74200
+        • first_name: LILIA
+        • last_name: CHETTAB
+        • city: THONON LES BAINS
+
+
+  ▸ STEALERS (27 databases)
+────────────────────────────────────────────────────────────────────────────────
+
+  [1] CoreSint • Hudson Rock Cavalier (email) — Stealer Logs
+        • source: Hudson Rock Cavalier (email)
+        • record_type: stealer_log
+        • bucket: summary
+
+  [2] CoreSint • LeakCheck (public) — Stealer Logs
+        • source: LeakCheck (public)
+        • record_type: stealer_log
+        • breach: Free.fr
+        • breach_date: 2024-10
+
+  [3] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: aimine@adinet.com.uy
+        • password: alejandro
+        • raw: aimine@adinet.com.uy:alejandro
+
+  [4] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: aimine@hotmail.com
+        • password: ihe5ud
+        • raw: aimine@hotmail.com:ihe5ud
+
+  [5] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: aimine@yahoo.com.br
+        • password: a1m1nyzuc
+        • raw: aimine@yahoo.com.br:a1m1nyzuc
+
+  [6] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: aimine@tianya.com
+        • password: 26331788
+        • raw: aimine@tianya.com:26331788
+
+  [7] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: aimine@126.com
+        • password: 654321
+        • raw: aimine@126.com:654321
+
+  [8] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: aimine@hotmail.fr
+        • password: 10171977
+        • raw: aimine@hotmail.fr:10171977
+
+  [9] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: amelie_69_@hotmail.fr
+        • password: @hotmail.fr
+        • raw: amelie_69_@hotmail.fr:@hotmail.fr
+
+  [10] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: amira_69200@hotmail.fr
+        • password: @hotmail.fr
+        • raw: amira_69200@hotmail.fr:@hotmail.fr
+
+  [11] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: diable_angelique@hotmail.fr
+        • password: @hotmail.fr
+        • raw: diable_angelique@hotmail.fr:@hotmail.fr
+
+  [12] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: hotmail.fr@hotmail.fr
+        • password: 123456
+        • raw: hotmail.fr@hotmail.fr:123456
+
+  [13] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: hotmail.fr@hotmail.fr
+        • password: 15avril
+        • raw: hotmail.fr@hotmail.fr:15avril
+
+  [14] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: hotmail.fr@hotmail.fr
+        • password: 5iiul08t
+        • raw: hotmail.fr@hotmail.fr:5iiul08t
+
+  [15] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: hotmail.fr@hotmail.fr
+        • password: 91mad5
+        • raw: hotmail.fr@hotmail.fr:91mad5
+
+  [16] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: hotmail.fr@hotmail.fr
+        • password: @zerty5+
+        • raw: hotmail.fr@hotmail.fr:@zerty5+
+
+  [17] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: jasondu77400@hotmail.fr
+        • password: @hotmail.fr
+        • raw: jasondu77400@hotmail.fr:@hotmail.fr
+
+  [18] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: live_sheltie.yoyo20@hotmail.fr
+        • password: @hotmail.fr
+        • raw: live_sheltie.yoyo20@hotmail.fr:@hotmail.fr
+
+  [19] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: marion.coursaud@hotmail.fr
+        • password: @hotmail.fr
+        • raw: marion.coursaud@hotmail.fr:@hotmail.fr
+
+  [20] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: fghfgh@hotmail.fr
+        • password: @hotmail.fr
+        • raw: fghfgh@hotmail.fr:@hotmail.fr
+
+  [21] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: kamulia@hotmail.fr
+        • password: @hotmail.fr
+        • raw: kamulia@hotmail.fr:@hotmail.fr
+
+  [22] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: hcam@hotmail.fr
+        • password: @hotmail.fr
+        • raw: hcam@hotmail.fr:@hotmail.fr
+
+  [23] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: hadja94@hotmail.fr
+        • password: @hotmail.fr
+        • raw: hadja94@hotmail.fr:@hotmail.fr
+
+  [24] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: missb.y92i@hotmail.fr
+        • password: @hotmail.fr@
+        • raw: missb.y92i@hotmail.fr:@hotmail.fr@
+
+  [25] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: tamna@hotmail.fr
+        • password: @hotmail.fr
+        • raw: tamna@hotmail.fr:@hotmail.fr
+
+  [26] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: toulousecedric@hotmail.fr
+        • password: @hotmail.fr
+        • raw: toulousecedric@hotmail.fr:@hotmail.fr
+
+  [27] CoreSint • ProxyNova COMB — Stealer Logs
+        • source: ProxyNova COMB
+        • record_type: stealer_log
+        • identifier: sdghgsdh@hotmail.fr
+        • password: @hotmail.fr
+        • raw: sdghgsdh@hotmail.fr:@hotmail.fr
+
+────────────────────────────────────────────────────────────────────────────────
+  OTHER DATA (101 entries)
+────────────────────────────────────────────────────────────────────────────────
+
+  • date: 2026-05-22T16:19:09Z
+  • date_birth: 1983-06-08
+  • date_birth: 2021-01-01
+  • date_birth: 2008-01-04
+  • date_birth: 2010-11-25
+  • date: 2026-08-06T15:04:24Z
+  • date: 2026-08-20T13:45:13Z
+  • date: 2026-08-20T13:45:23Z
+  • id: 2,93084E+15
+  • civilite: Mme
+  • date_naissance: 1983-06-08
+  • date_de_collect: 24/01/2022 16:18
+  • source_site: https://aide-scolaire.plein2kdo.com/
+  • fichier_nhy_chaud: 1
+  • qualification: HC Personne Fragile
+  • departement: DEP74
+  • idtab: 437189
+  • fournisseurs: WebRivage
+  • dernier_appel: 2023-01-05
+  • serveur: kpc.b
+  • source_date: 1983-06-08
+  • datenaissance: 08/06/1983
+  • Qualification: HC Personne Fragile
+  • Date_de_Collect: 24/01/2022 16:18
+  • ProfileCL: Particulier
+  • NumeroClient: W8377694
+  • Identifiant: aimine
+  • identifiant: aimine
+  • DCGPCHN: 0WB26O392A
+  • id: 257135
+  • id_psp: ENEH-CG9A
+  • date_naissance: 2010-11-25T00:00:00.000+01:00
+  • genre: F
+  • organisme: CAF
+  • situation: Jeune
+  • allocataire qualite: MME
+  • allocataire matricule: 0597853
+  • allocataire code_organisme: 741
+  • created_at: 2022-09-01T00:00:00.000+02:00
+  • updated_at: 2022-09-01T00:00:00.000+02:00
+  • exercice_id: 1
+  • source_date: 2022-09-01
+  • dob: 2010-11-25
+  • gender: F
+  • id: 961212
+  • id_psp: YS3G-X6HH
+  • date_naissance: 2008-01-04T00:00:00.000+01:00
+  • dob: 2008-01-04
+  • source: Hudson Rock Cavalier (email)
+  • record_type: stealer_log
+  • bucket: summary
+  • source: LeakCheck (public)
+  • breach: Free.fr
+  • breach_date: 2024-10
+  • source: ProxyNova COMB
+  • identifier: aimine@adinet.com.uy
+  • raw: aimine@adinet.com.uy:alejandro
+  • identifier: aimine@hotmail.com
+  • raw: aimine@hotmail.com:ihe5ud
+  • identifier: aimine@yahoo.com.br
+  • raw: aimine@yahoo.com.br:a1m1nyzuc
+  • identifier: aimine@tianya.com
+  • raw: aimine@tianya.com:26331788
+  • identifier: aimine@126.com
+  • raw: aimine@126.com:654321
+  • identifier: aimine@hotmail.fr
+  • raw: aimine@hotmail.fr:10171977
+  • identifier: amelie_69_@hotmail.fr
+  • raw: amelie_69_@hotmail.fr:@hotmail.fr
+  • identifier: amira_69200@hotmail.fr
+  • raw: amira_69200@hotmail.fr:@hotmail.fr
+  • identifier: diable_angelique@hotmail.fr
+  • raw: diable_angelique@hotmail.fr:@hotmail.fr
+  • identifier: hotmail.fr@hotmail.fr
+  • raw: hotmail.fr@hotmail.fr:123456
+  • raw: hotmail.fr@hotmail.fr:15avril
+  • raw: hotmail.fr@hotmail.fr:5iiul08t
+  • raw: hotmail.fr@hotmail.fr:91mad5
+  • raw: hotmail.fr@hotmail.fr:@zerty5+
+  • identifier: jasondu77400@hotmail.fr
+  • raw: jasondu77400@hotmail.fr:@hotmail.fr
+  • identifier: live_sheltie.yoyo20@hotmail.fr
+  • raw: live_sheltie.yoyo20@hotmail.fr:@hotmail.fr
+  • identifier: marion.coursaud@hotmail.fr
+  • raw: marion.coursaud@hotmail.fr:@hotmail.fr
+  • identifier: fghfgh@hotmail.fr
+  • raw: fghfgh@hotmail.fr:@hotmail.fr
+  • identifier: kamulia@hotmail.fr
+  • raw: kamulia@hotmail.fr:@hotmail.fr
+  • identifier: hcam@hotmail.fr
+  • raw: hcam@hotmail.fr:@hotmail.fr
+  • identifier: hadja94@hotmail.fr
+  • raw: hadja94@hotmail.fr:@hotmail.fr
+  • identifier: missb.y92i@hotmail.fr
+  • raw: missb.y92i@hotmail.fr:@hotmail.fr@
+  • identifier: tamna@hotmail.fr
+  • raw: tamna@hotmail.fr:@hotmail.fr
+  • identifier: toulousecedric@hotmail.fr
+  • raw: toulousecedric@hotmail.fr:@hotmail.fr
+  • identifier: sdghgsdh@hotmail.fr
+  • raw: sdghgsdh@hotmail.fr:@hotmail.fr
+
+
+================================================================================
+                    Generated by SeekNow - OSINT Platform
+                         https://see-know.ru
+================================================================================
