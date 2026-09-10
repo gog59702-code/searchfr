@@ -30,103 +30,44 @@
       --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --mono: 'JetBrains Mono', ui-monospace, monospace;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-      line-height: 1.5;
+      font-family: var(--font); background: var(--bg); color: var(--text);
+      min-height: 100vh; -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.5;
     }
 
     /* ============================================
        FOND ANIMÉ
     ============================================ */
-    .bg-layer {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
+    .bg-layer { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
     .bg-grid {
-      position: absolute;
-      inset: -50%;
+      position: absolute; inset: -50%;
       background-image:
         linear-gradient(rgba(109, 92, 255, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(109, 92, 255, 0.05) 1px, transparent 1px);
-      background-size: 60px 60px;
-      animation: gridMove 40s linear infinite;
+      background-size: 60px 60px; animation: gridMove 40s linear infinite;
       mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 10%, transparent 80%);
       -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 10%, transparent 80%);
     }
-
-    @keyframes gridMove {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(60px, 60px); }
-    }
-
-    .bg-orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(100px);
-      opacity: 0.5;
-    }
-
-    .orb-1 {
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-      top: -200px; left: 10%;
-      animation: float 20s ease-in-out infinite;
-    }
-
-    .orb-2 {
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, #4f46e5 0%, transparent 70%);
-      top: 40%; right: -100px;
-      animation: float 25s ease-in-out infinite reverse;
-    }
-
-    .orb-3 {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, #9333ea 0%, transparent 70%);
-      bottom: -100px; left: 40%;
-      animation: float 30s ease-in-out infinite;
-    }
-
+    @keyframes gridMove { 0% { transform: translate(0,0); } 100% { transform: translate(60px,60px); } }
+    .bg-orb { position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.5; }
+    .orb-1 { width: 600px; height: 600px; background: radial-gradient(circle, var(--accent) 0%, transparent 70%); top: -200px; left: 10%; animation: float 20s ease-in-out infinite; }
+    .orb-2 { width: 500px; height: 500px; background: radial-gradient(circle, #4f46e5 0%, transparent 70%); top: 40%; right: -100px; animation: float 25s ease-in-out infinite reverse; }
+    .orb-3 { width: 400px; height: 400px; background: radial-gradient(circle, #9333ea 0%, transparent 70%); bottom: -100px; left: 40%; animation: float 30s ease-in-out infinite; }
     @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(40px, -40px) scale(1.1); }
-      66% { transform: translate(-30px, 30px) scale(0.9); }
+      0%, 100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(40px,-40px) scale(1.1); }
+      66% { transform: translate(-30px,30px) scale(0.9); }
     }
-
-    .particles {
-      position: absolute;
-      inset: 0;
-    }
-
+    .particles { position: absolute; inset: 0; }
     .particle {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: var(--accent-2);
-      border-radius: 50%;
-      opacity: 0.6;
-      animation: rise linear infinite;
-      box-shadow: 0 0 4px var(--accent-2);
+      position: absolute; width: 2px; height: 2px; background: var(--accent-2);
+      border-radius: 50%; opacity: 0.6; animation: rise linear infinite; box-shadow: 0 0 4px var(--accent-2);
     }
-
     @keyframes rise {
       0% { transform: translateY(100vh) scale(0); opacity: 0; }
-      10% { opacity: 0.6; }
-      90% { opacity: 0.6; }
+      10% { opacity: 0.6; } 90% { opacity: 0.6; }
       100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
     }
 
@@ -134,593 +75,481 @@
        HEADER
     ============================================ */
     .header {
-      position: relative;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 40px;
-      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 40px; border-bottom: 1px solid var(--border);
       background: rgba(6, 7, 10, 0.7);
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
-      position: sticky;
-      top: 0;
+      backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%);
     }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      font-size: 17px;
-      letter-spacing: -0.4px;
-      text-decoration: none;
-      color: var(--text);
-    }
-
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 17px; letter-spacing: -0.4px; text-decoration: none; color: var(--text); cursor: pointer; }
     .brand-logo {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
+      width: 36px; height: 36px; border-radius: 10px;
       background: linear-gradient(135deg, var(--accent), #a855f7);
-      display: grid;
-      place-items: center;
-      font-size: 18px;
-      font-weight: 900;
-      color: #fff;
-      box-shadow: 0 0 20px var(--accent-glow);
-      position: relative;
-      overflow: hidden;
+      display: grid; place-items: center; font-size: 18px; font-weight: 900; color: #fff;
+      box-shadow: 0 0 20px var(--accent-glow); position: relative; overflow: hidden;
     }
-
     .brand-logo::before {
-      content: "";
-      position: absolute;
-      inset: 0;
+      content: ""; position: absolute; inset: 0;
       background: linear-gradient(135deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
       animation: shine 3s ease-in-out infinite;
     }
-
-    @keyframes shine {
-      0%, 100% { transform: translateX(-100%); }
-      50% { transform: translateX(100%); }
-    }
-
-    .nav {
-      display: flex;
-      gap: 4px;
-      align-items: center;
-    }
-
+    @keyframes shine { 0%, 100% { transform: translateX(-100%); } 50% { transform: translateX(100%); } }
+    .nav { display: flex; gap: 4px; align-items: center; }
     .nav a {
-      color: var(--text-2);
-      text-decoration: none;
-      font-size: 13.5px;
-      font-weight: 500;
-      padding: 8px 16px;
-      border-radius: 10px;
-      transition: all 0.2s ease;
-      position: relative;
+      color: var(--text-2); text-decoration: none; font-size: 13.5px; font-weight: 500;
+      padding: 8px 16px; border-radius: 10px; transition: all 0.2s ease;
+      position: relative; cursor: pointer;
     }
-
     .nav a:hover { color: var(--text); background: var(--bg-2); }
     .nav a.active { color: var(--text); background: var(--bg-2); }
-
     .nav a.active::after {
-      content: "";
-      position: absolute;
-      bottom: 4px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 16px;
-      height: 2px;
-      background: var(--accent);
-      border-radius: 2px;
+      content: ""; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%);
+      width: 16px; height: 2px; background: var(--accent); border-radius: 2px;
     }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
+    .header-actions { display: flex; align-items: center; gap: 12px; }
     .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--border-2);
-      background: var(--bg-1);
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-2);
-      letter-spacing: 0.2px;
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px;
+      border: 1px solid var(--border-2); background: var(--bg-1);
+      font-size: 12px; font-weight: 600; color: var(--text-2); letter-spacing: 0.2px;
     }
-
-    .pill-live {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 10px var(--green-glow);
-      animation: pulse 1.8s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.85); }
-    }
-
+    .pill-live { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green-glow); animation: pulse 1.8s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
     .pill-count { color: var(--text); font-family: var(--mono); font-weight: 500; }
 
     /* ============================================
-       HERO
+       PAGES (SPA)
     ============================================ */
-    .hero {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 100px 32px 80px;
-      text-align: center;
-      min-height: calc(100vh - 76px);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: var(--text-3);
-      text-transform: uppercase;
-      margin-bottom: 28px;
-      padding: 8px 18px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.02);
-    }
-
-    .eyebrow-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 8px var(--accent-glow);
-    }
-
-    h1 {
-      font-size: clamp(44px, 7vw, 88px);
-      font-weight: 900;
-      letter-spacing: -3px;
-      line-height: 1;
-      margin-bottom: 24px;
-      max-width: 1000px;
-      background: linear-gradient(180deg, #ffffff 0%, #b8bcc8 60%, #6b7280 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: fadeUp 0.8s ease both;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .lede {
-      font-size: 18px;
-      color: var(--text-2);
-      max-width: 600px;
-      margin-bottom: 48px;
-      line-height: 1.6;
-      animation: fadeUp 0.8s ease 0.1s both;
-    }
+    .page { display: none; position: relative; z-index: 10; }
+    .page.active { display: block; animation: pageIn 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    @keyframes pageIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
     /* ============================================
-       SEARCH BOX
+       HERO (accueil)
     ============================================ */
-    .search-wrap {
-      width: 100%;
-      max-width: 680px;
-      margin-bottom: 24px;
-      animation: fadeUp 0.8s ease 0.2s both;
-      position: relative;
+    .hero {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 100px 32px 80px; text-align: center; min-height: calc(100vh - 76px);
     }
-
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 700;
+      letter-spacing: 3px; color: var(--text-3); text-transform: uppercase; margin-bottom: 28px;
+      padding: 8px 18px; border: 1px solid var(--border); border-radius: 999px;
+      background: rgba(255,255,255,0.02);
+    }
+    .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    h1 {
+      font-size: clamp(44px, 7vw, 88px); font-weight: 900; letter-spacing: -3px; line-height: 1;
+      margin-bottom: 24px; max-width: 1000px;
+      background: linear-gradient(180deg, #ffffff 0%, #b8bcc8 60%, #6b7280 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      animation: fadeUp 0.8s ease both;
+    }
+    .lede {
+      font-size: 18px; color: var(--text-2); max-width: 600px; margin-bottom: 48px;
+      line-height: 1.6; animation: fadeUp 0.8s ease 0.1s both;
+    }
+    .search-wrap { width: 100%; max-width: 680px; margin-bottom: 24px; animation: fadeUp 0.8s ease 0.2s both; }
     .search-box {
-      display: flex;
-      align-items: center;
-      background: rgba(16, 19, 24, 0.8);
-      border: 1px solid var(--border-2);
-      border-radius: 18px;
-      padding: 8px 8px 8px 22px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      position: relative;
-      overflow: hidden;
+      display: flex; align-items: center;
+      background: rgba(16, 19, 24, 0.8); border: 1px solid var(--border-2); border-radius: 18px;
+      padding: 8px 8px 8px 22px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      position: relative; overflow: hidden;
     }
-
     .search-box::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      padding: 1px;
+      content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
       background: linear-gradient(135deg, var(--accent), transparent 40%, transparent 60%, #9333ea);
       -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      opacity: 0; transition: opacity 0.3s ease; pointer-events: none;
     }
-
     .search-box:focus-within::before { opacity: 1; }
-
     .search-box:focus-within {
       border-color: transparent;
       box-shadow: 0 0 0 6px rgba(109, 92, 255, 0.12), 0 20px 60px rgba(109, 92, 255, 0.15);
       transform: translateY(-2px);
     }
-
-    .search-icon {
-      width: 22px;
-      height: 22px;
-      color: var(--text-3);
-      flex-shrink: 0;
-      margin-right: 16px;
-      transition: color 0.2s ease;
-    }
-
+    .search-icon { width: 22px; height: 22px; color: var(--text-3); flex-shrink: 0; margin-right: 16px; transition: color 0.2s ease; }
     .search-box:focus-within .search-icon { color: var(--accent-2); }
-
     .search-box input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      color: var(--text);
-      font-size: 16px;
-      font-family: var(--font);
-      font-weight: 500;
-      padding: 16px 0;
+      flex: 1; background: transparent; border: none; outline: none;
+      color: var(--text); font-size: 16px; font-family: var(--font); font-weight: 500; padding: 16px 0;
     }
-
     .search-box input::placeholder { color: var(--text-3); font-weight: 400; }
-
     .search-box button {
-      background: linear-gradient(135deg, var(--accent), #7c5cff);
-      color: #fff;
-      border: none;
-      border-radius: 12px;
-      padding: 14px 26px;
-      font-size: 14px;
-      font-weight: 600;
-      font-family: var(--font);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 8px 24px rgba(109, 92, 255, 0.35);
-      position: relative;
-      overflow: hidden;
+      background: linear-gradient(135deg, var(--accent), #7c5cff); color: #fff; border: none;
+      border-radius: 12px; padding: 14px 26px; font-size: 14px; font-weight: 600;
+      font-family: var(--font); cursor: pointer; transition: all 0.2s ease;
+      white-space: nowrap; display: flex; align-items: center; gap: 8px;
+      box-shadow: 0 8px 24px rgba(109, 92, 255, 0.35); position: relative; overflow: hidden;
     }
-
-    .search-box button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 32px rgba(109, 92, 255, 0.5);
-    }
-
+    .search-box button:hover { transform: translateY(-1px); box-shadow: 0 12px 32px rgba(109, 92, 255, 0.5); }
     .search-box button:active { transform: translateY(0); }
+    .search-box button svg { width: 14px; height: 14px; }
 
-    .search-box button svg {
-      width: 14px;
-      height: 14px;
-    }
-
-    /* ============================================
-       CHIPS
-    ============================================ */
     .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-      max-width: 680px;
-      margin-bottom: 56px;
-      animation: fadeUp 0.8s ease 0.3s both;
+      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+      max-width: 680px; margin-bottom: 56px; animation: fadeUp 0.8s ease 0.3s both;
     }
-
     .chip {
-      font-size: 12.5px;
-      font-weight: 500;
-      color: var(--text-2);
-      padding: 8px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.02);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      user-select: none;
-      position: relative;
-      overflow: hidden;
+      font-size: 12.5px; font-weight: 500; color: var(--text-2); padding: 8px 16px;
+      border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,0.02);
+      cursor: pointer; transition: all 0.2s ease; user-select: none;
     }
-
-    .chip:hover {
-      color: var(--text);
-      border-color: var(--border-hover);
-      background: var(--bg-2);
-      transform: translateY(-1px);
-    }
-
+    .chip:hover { color: var(--text); border-color: var(--border-hover); background: var(--bg-2); transform: translateY(-1px); }
     .chip.active {
-      color: #fff;
-      background: linear-gradient(135deg, var(--accent), #7c5cff);
-      border-color: transparent;
-      box-shadow: 0 6px 20px rgba(109, 92, 255, 0.35);
+      color: #fff; background: linear-gradient(135deg, var(--accent), #7c5cff);
+      border-color: transparent; box-shadow: 0 6px 20px rgba(109, 92, 255, 0.35);
     }
 
-    /* ============================================
-       STATS
-    ============================================ */
     .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      max-width: 680px;
-      width: 100%;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 680px; width: 100%;
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
       background: linear-gradient(180deg, rgba(22, 26, 34, 0.6), rgba(11, 13, 18, 0.6));
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      overflow: hidden;
-      animation: fadeUp 0.8s ease 0.4s both;
-      position: relative;
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      overflow: hidden; animation: fadeUp 0.8s ease 0.4s both; position: relative;
     }
-
     .stats::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
       background: linear-gradient(90deg, transparent, var(--accent), transparent);
     }
-
-    .stat {
-      padding: 32px 20px;
-      text-align: center;
-      border-right: 1px solid var(--border);
-      position: relative;
-    }
-
+    .stat { padding: 32px 20px; text-align: center; border-right: 1px solid var(--border); }
     .stat:last-child { border-right: none; }
-
     .stat-value {
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: -1px;
-      color: var(--text);
-      margin-bottom: 6px;
-      font-feature-settings: "tnum";
-      font-variant-numeric: tabular-nums;
+      font-size: 32px; font-weight: 800; letter-spacing: -1px; color: var(--text);
+      margin-bottom: 6px; font-variant-numeric: tabular-nums;
     }
+    .stat-value .suffix { font-size: 20px; color: var(--accent-2); font-weight: 700; }
+    .stat-label { font-size: 11px; font-weight: 600; color: var(--text-3); letter-spacing: 1.5px; text-transform: uppercase; }
 
-    .stat-value .suffix {
-      font-size: 20px;
-      color: var(--accent-2);
-      font-weight: 700;
-    }
-
-    .stat-label {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--text-3);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    /* ============================================
-       FEATURES
-    ============================================ */
     .features {
-      display: flex;
-      gap: 32px;
-      margin-top: 56px;
-      flex-wrap: wrap;
-      justify-content: center;
-      max-width: 800px;
-      animation: fadeUp 0.8s ease 0.5s both;
+      display: flex; gap: 32px; margin-top: 56px; flex-wrap: wrap;
+      justify-content: center; max-width: 800px; animation: fadeUp 0.8s ease 0.5s both;
     }
-
     .feature {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--text-2);
-      font-size: 13.5px;
-      font-weight: 500;
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid var(--border);
-      transition: all 0.2s ease;
-      text-decoration: none;
-      cursor: pointer;
+      display: flex; align-items: center; gap: 12px; color: var(--text-2);
+      font-size: 13.5px; font-weight: 500; padding: 10px 18px; border-radius: 999px;
+      background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+      transition: all 0.2s ease; text-decoration: none; cursor: pointer;
     }
-
-    .feature:hover {
-      border-color: var(--border-hover);
-      background: var(--bg-2);
-      transform: translateY(-2px);
-    }
-
+    .feature:hover { border-color: var(--border-hover); background: var(--bg-2); transform: translateY(-2px); }
     .feature-icon {
-      width: 30px;
-      height: 30px;
-      border-radius: 8px;
+      width: 30px; height: 30px; border-radius: 8px;
       background: linear-gradient(135deg, rgba(109, 92, 255, 0.2), rgba(147, 51, 234, 0.2));
       border: 1px solid rgba(109, 92, 255, 0.3);
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
+      display: grid; place-items: center; flex-shrink: 0;
     }
-
     .feature-icon svg { width: 15px; height: 15px; color: var(--accent-2); }
 
-    /* ============================================
-       RÉSULTATS
-    ============================================ */
-    .results {
-      display: none;
-      margin-top: 56px;
-      width: 100%;
-      max-width: 680px;
-      text-align: left;
-    }
-
-    .results.visible {
-      display: block;
-      animation: fadeUp 0.5s ease;
-    }
-
+    /* RÉSULTATS */
+    .results { display: none; margin-top: 56px; width: 100%; max-width: 680px; text-align: left; }
+    .results.visible { display: block; animation: fadeUp 0.5s ease; }
     .results-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 18px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--border);
     }
-
-    .results-header h2 {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-2);
-    }
-
-    .results-header h2 strong {
-      color: var(--text);
-      font-weight: 700;
-    }
-
-    .results-header .meta {
-      font-size: 12px;
-      color: var(--text-3);
-      font-family: var(--mono);
-    }
-
+    .results-header h2 { font-size: 14px; font-weight: 600; color: var(--text-2); }
+    .results-header h2 strong { color: var(--text); font-weight: 700; }
+    .results-header .meta { font-size: 12px; color: var(--text-3); font-family: var(--mono); }
     .result-card {
       background: linear-gradient(180deg, rgba(22, 26, 34, 0.6), rgba(16, 19, 24, 0.6));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px 22px;
-      margin-bottom: 12px;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 18px 22px; margin-bottom: 12px;
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      animation: fadeUp 0.4s ease both;
+      cursor: pointer; position: relative; overflow: hidden; animation: fadeUp 0.4s ease both;
     }
-
     .result-card::before {
-      content: "";
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 3px;
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
       background: linear-gradient(180deg, var(--accent), #9333ea);
-      transform: scaleY(0);
-      transform-origin: top;
-      transition: transform 0.3s ease;
+      transform: scaleY(0); transform-origin: top; transition: transform 0.3s ease;
     }
-
-    .result-card:hover {
-      border-color: var(--border-hover);
-      transform: translateX(4px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    }
-
+    .result-card:hover { border-color: var(--border-hover); transform: translateX(4px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
     .result-card:hover::before { transform: scaleY(1); }
-
-    .result-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 4px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
+    .result-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
     .result-title .match {
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--green);
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      letter-spacing: 0.5px;
+      font-size: 10px; font-weight: 700; color: var(--green); padding: 2px 8px;
+      border-radius: 999px; background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3); letter-spacing: 0.5px;
     }
-
-    .result-desc {
-      font-size: 13px;
-      color: var(--text-2);
-      line-height: 1.5;
-    }
-
+    .result-desc { font-size: 13px; color: var(--text-2); line-height: 1.5; }
     .skeleton {
       background: linear-gradient(90deg, var(--bg-2) 25%, var(--bg-3) 50%, var(--bg-2) 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.5s infinite;
-      border-radius: 4px;
-      height: 14px;
-      margin-bottom: 8px;
+      background-size: 200% 100%; animation: shimmer 1.5s infinite;
+      border-radius: 4px; height: 14px; margin-bottom: 8px;
+    }
+    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+    /* ============================================
+       PAGE WRAP (tarifs + fonctionnement)
+    ============================================ */
+    .page-wrap { max-width: 1200px; margin: 0 auto; padding: 80px 32px 120px; }
+    .page-head { text-align: center; margin-bottom: 56px; animation: fadeUp 0.8s ease both; }
+    .page-head h1 {
+      font-size: clamp(40px, 6vw, 68px); font-weight: 900; letter-spacing: -2.5px; line-height: 1.05;
+      margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto;
+      background: linear-gradient(180deg, #ffffff 0%, #b8bcc8 60%, #6b7280 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .page-head p { color: var(--text-2); font-size: 17px; max-width: 620px; margin: 0 auto; line-height: 1.6; }
+
+    /* TOGGLE MENSUEL/ANNUEL */
+    .billing-toggle {
+      display: inline-flex; align-items: center; gap: 4px; padding: 6px; border-radius: 999px;
+      border: 1px solid var(--border-2); background: rgba(16, 19, 24, 0.8);
+      backdrop-filter: blur(20px); margin: 36px auto 56px; position: relative;
+      left: 50%; transform: translateX(-50%);
+    }
+    .billing-toggle button {
+      background: transparent; border: none; color: var(--text-2);
+      font-family: var(--font); font-size: 13.5px; font-weight: 600;
+      padding: 9px 22px; border-radius: 999px; cursor: pointer; transition: all 0.25s ease;
+      position: relative; z-index: 1; display: inline-flex; align-items: center;
+    }
+    .billing-toggle button.active {
+      color: #fff; background: linear-gradient(135deg, var(--accent), #7c5cff);
+      box-shadow: 0 6px 20px rgba(109, 92, 255, 0.35);
+    }
+    .billing-toggle .save {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+      background: rgba(16, 185, 129, 0.15); color: var(--green);
+      padding: 2px 7px; border-radius: 999px; margin-left: 6px;
+      border: 1px solid rgba(16, 185, 129, 0.3);
     }
 
-    @keyframes shimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
+    /* PLANS */
+    .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 88px; }
+    .plan {
+      background: linear-gradient(180deg, rgba(22,26,34,0.6), rgba(16,19,24,0.6));
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 36px 30px; position: relative;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      display: flex; flex-direction: column;
     }
+    .plan:hover { border-color: var(--border-hover); transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
+    .plan.featured {
+      background:
+        linear-gradient(180deg, rgba(22,26,34,0.85), rgba(16,19,24,0.85)) padding-box,
+        linear-gradient(135deg, var(--accent), #9333ea) border-box;
+      border: 1px solid transparent;
+      box-shadow: 0 0 50px rgba(109, 92, 255, 0.25), 0 20px 60px rgba(0,0,0,0.4);
+      transform: translateY(-8px);
+    }
+    .plan.featured:hover { transform: translateY(-14px); }
+    .plan-badge {
+      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+      font-size: 10px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;
+      background: linear-gradient(135deg, var(--accent), #9333ea);
+      color: #fff; padding: 6px 16px; border-radius: 999px; white-space: nowrap;
+      box-shadow: 0 6px 20px rgba(109, 92, 255, 0.5);
+    }
+    .plan-name {
+      font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--text-3); margin-bottom: 18px;
+    }
+    .plan.featured .plan-name { color: var(--accent-2); }
+    .plan-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 6px; }
+    .plan-price .amount { font-size: 52px; font-weight: 800; letter-spacing: -2px; color: var(--text); line-height: 1; }
+    .plan-price .period { font-size: 15px; color: var(--text-3); font-weight: 500; }
+    .plan-sub { font-size: 13px; color: var(--text-3); margin-bottom: 28px; min-height: 20px; }
+    .plan-features { list-style: none; margin: 0 0 32px 0; padding: 0; flex: 1; }
+    .plan-features li {
+      font-size: 14px; color: var(--text-2); padding: 10px 0 10px 28px;
+      position: relative; border-bottom: 1px solid var(--border);
+    }
+    .plan-features li:last-child { border-bottom: none; }
+    .plan-features li::before {
+      content: ""; position: absolute; left: 0; top: 15px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: rgba(109, 92, 255, 0.15);
+      border: 1px solid rgba(109, 92, 255, 0.4);
+    }
+    .plan-features li::after {
+      content: ""; position: absolute; left: 5px; top: 19px;
+      width: 6px; height: 3px;
+      border-left: 1.5px solid var(--accent-2); border-bottom: 1.5px solid var(--accent-2);
+      transform: rotate(-45deg);
+    }
+    .plan-features li.muted { color: var(--text-3); text-decoration: line-through; opacity: 0.5; }
+    .plan-features li.muted::before { border-color: rgba(255,255,255,0.08); background: transparent; }
+    .plan-features li.muted::after { border-color: var(--text-3); }
+    .plan-cta {
+      display: block; width: 100%; text-align: center;
+      padding: 14px; border-radius: 12px; font-size: 14px; font-weight: 600;
+      font-family: var(--font); text-decoration: none; cursor: pointer;
+      border: 1px solid var(--border-2); background: var(--bg-1); color: var(--text);
+      transition: all 0.2s ease;
+    }
+    .plan-cta:hover { border-color: var(--border-hover); background: var(--bg-2); transform: translateY(-1px); }
+    .plan.featured .plan-cta {
+      background: linear-gradient(135deg, var(--accent), #7c5cff);
+      border-color: transparent; color: #fff;
+      box-shadow: 0 8px 24px rgba(109, 92, 255, 0.35);
+    }
+    .plan.featured .plan-cta:hover { box-shadow: 0 12px 32px rgba(109, 92, 255, 0.5); }
+
+    /* COMPARATEUR */
+    .compare-wrap { margin-bottom: 88px; overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--border); background: rgba(16, 19, 24, 0.5); backdrop-filter: blur(20px); }
+    .compare { width: 100%; border-collapse: collapse; min-width: 640px; }
+    .compare th, .compare td { padding: 16px 22px; text-align: left; font-size: 14px; border-bottom: 1px solid var(--border); }
+    .compare thead th { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-3); background: rgba(255,255,255,0.02); position: sticky; top: 0; }
+    .compare thead th.featured-col { color: var(--accent-2); }
+    .compare tbody td { color: var(--text-2); }
+    .compare tbody td:first-child { color: var(--text); font-weight: 500; }
+    .compare tbody tr:last-child td { border-bottom: none; }
+    .compare tbody tr:hover td { background: rgba(255,255,255,0.02); }
+    .compare .yes { color: var(--green); font-weight: 600; }
+    .compare .no { color: var(--text-3); }
+    .compare td.center, .compare th.center { text-align: center; }
+
+    /* FAQ */
+    .faq { max-width: 800px; margin: 0 auto 88px; }
+    .faq h2, .section-title {
+      font-size: 28px; font-weight: 800; letter-spacing: -0.8px;
+      margin-bottom: 28px; text-align: center;
+      background: linear-gradient(180deg, #ffffff 0%, #b8bcc8 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .faq-item {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      background: rgba(16, 19, 24, 0.5); margin-bottom: 10px; overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+    .faq-item:hover { border-color: var(--border-hover); }
+    .faq-item summary {
+      padding: 18px 24px; cursor: pointer; font-size: 14.5px; font-weight: 600;
+      color: var(--text); list-style: none;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: "+"; font-size: 22px; color: var(--text-3);
+      transition: transform 0.25s ease; flex-shrink: 0; line-height: 1;
+    }
+    .faq-item[open] summary::after { transform: rotate(45deg); color: var(--accent-2); }
+    .faq-item[open] { border-color: rgba(109, 92, 255, 0.35); }
+    .faq-item p { padding: 0 24px 22px; font-size: 14px; color: var(--text-2); line-height: 1.65; }
+
+    /* CTA FINAL */
+    .cta-final {
+      background: linear-gradient(135deg, rgba(109, 92, 255, 0.12), rgba(147, 51, 234, 0.12));
+      border: 1px solid rgba(109, 92, 255, 0.3);
+      border-radius: var(--radius-lg); padding: 56px 40px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-final::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(109,92,255,0.15), transparent 70%);
+      pointer-events: none;
+    }
+    .cta-final h2 { font-size: 32px; font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; position: relative; }
+    .cta-final p { font-size: 16px; color: var(--text-2); max-width: 480px; margin: 0 auto 28px; line-height: 1.6; position: relative; }
+    .cta-final a {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 30px; border-radius: 12px; font-size: 15px; font-weight: 600;
+      text-decoration: none; color: #fff;
+      background: linear-gradient(135deg, var(--accent), #7c5cff);
+      box-shadow: 0 8px 24px rgba(109, 92, 255, 0.4);
+      transition: all 0.2s ease; position: relative;
+    }
+    .cta-final a:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(109, 92, 255, 0.6); }
+
+    /* TIMELINE (fonctionnement) */
+    .pipeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 88px; }
+    .pipe-step {
+      background: linear-gradient(180deg, rgba(22,26,34,0.6), rgba(16,19,24,0.6));
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 28px 24px; position: relative; overflow: hidden;
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      transition: all 0.3s ease;
+    }
+    .pipe-step:hover { border-color: rgba(109, 92, 255, 0.4); transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+    .pipe-step::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    .pipe-step:hover::before { opacity: 1; }
+    .pipe-num {
+      font-family: var(--mono); font-size: 12px; font-weight: 600;
+      color: var(--accent-2); letter-spacing: 1px; margin-bottom: 16px;
+    }
+    .pipe-step h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.3px; color: var(--text); }
+    .pipe-step p { font-size: 13.5px; color: var(--text-2); line-height: 1.6; }
+
+    /* TIMELINE VERTICALE */
+    .timeline { max-width: 760px; margin: 0 auto 88px; position: relative; }
+    .timeline::before {
+      content: ""; position: absolute; left: 27px; top: 12px; bottom: 12px; width: 2px;
+      background: linear-gradient(180deg, transparent, var(--accent), transparent);
+      opacity: 0.4;
+    }
+    .tl-item { display: flex; gap: 28px; padding: 20px 0; position: relative; }
+    .tl-marker {
+      flex-shrink: 0; width: 56px; height: 56px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), #9333ea);
+      display: grid; place-items: center; font-family: var(--mono);
+      font-size: 18px; font-weight: 700; color: #fff;
+      box-shadow: 0 0 30px var(--accent-glow); position: relative; z-index: 1;
+    }
+    .tl-body { padding-top: 8px; }
+    .tl-body h3 { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 8px; letter-spacing: -0.3px; }
+    .tl-body p { font-size: 14px; color: var(--text-2); line-height: 1.65; }
+    .tl-body .tl-meta {
+      display: inline-block; font-family: var(--mono); font-size: 11px; font-weight: 600;
+      color: var(--accent-2); letter-spacing: 1px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 999px;
+      background: rgba(109, 92, 255, 0.1); border: 1px solid rgba(109, 92, 255, 0.25);
+      margin-bottom: 10px;
+    }
+
+    /* TECH GRID */
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 88px; }
+    .tech {
+      background: rgba(16, 19, 24, 0.5); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px; transition: all 0.25s ease;
+    }
+    .tech:hover { border-color: var(--border-hover); background: var(--bg-2); transform: translateY(-3px); }
+    .tech-label { font-size: 10.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-3); margin-bottom: 10px; }
+    .tech-value { font-family: var(--mono); font-size: 22px; font-weight: 600; color: var(--accent-2); margin-bottom: 6px; }
+    .tech-desc { font-size: 13px; color: var(--text-2); line-height: 1.5; }
+
+    /* GARANTIES */
+    .guarantees { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 88px; }
+    .guarantee {
+      display: flex; gap: 16px; padding: 24px;
+      background: rgba(16, 19, 24, 0.5); border: 1px solid var(--border);
+      border-radius: var(--radius); transition: all 0.25s ease;
+    }
+    .guarantee:hover { border-color: rgba(16, 185, 129, 0.35); background: var(--bg-2); }
+    .guarantee-icon {
+      flex-shrink: 0; width: 40px; height: 40px; border-radius: 10px;
+      background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3);
+      display: grid; place-items: center;
+    }
+    .guarantee-icon svg { width: 18px; height: 18px; color: var(--green); }
+    .guarantee h3 { font-size: 14.5px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .guarantee p { font-size: 13px; color: var(--text-2); line-height: 1.5; }
 
     /* ============================================
        FOOTER
     ============================================ */
     .footer {
-      position: relative;
-      z-index: 10;
-      padding: 24px 40px;
+      position: relative; z-index: 10; padding: 24px 40px;
       border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12px;
-      color: var(--text-3);
-      flex-wrap: wrap;
-      gap: 12px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 12px; color: var(--text-3); flex-wrap: wrap; gap: 12px;
       background: rgba(6, 7, 10, 0.5);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     }
-
-    .footer a {
-      color: var(--text-3);
-      text-decoration: none;
-      transition: color 0.15s ease;
-    }
-
+    .footer a { color: var(--text-3); text-decoration: none; transition: color 0.15s ease; }
     .footer a:hover { color: var(--text-2); }
 
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
     @media (max-width: 820px) {
       .header { padding: 16px 20px; }
       .nav { display: none; }
@@ -734,6 +563,14 @@
       .stat { border-right: none; border-bottom: 1px solid var(--border); }
       .stat:last-child { border-bottom: none; }
       .footer { padding: 20px; justify-content: center; text-align: center; }
+      .page-wrap { padding: 60px 20px 80px; }
+      .plan.featured { transform: none; }
+      .plan.featured:hover { transform: translateY(-6px); }
+      .cta-final { padding: 40px 24px; }
+      .cta-final h2 { font-size: 24px; }
+      .timeline::before { left: 19px; }
+      .tl-marker { width: 40px; height: 40px; font-size: 14px; border-radius: 10px; }
+      .tl-item { gap: 18px; }
     }
 
     @media (max-width: 480px) {
@@ -742,19 +579,14 @@
       .chips { gap: 6px; }
       .chip { font-size: 11.5px; padding: 6px 12px; }
       .features { gap: 16px; }
+      .plan-price .amount { font-size: 42px; }
     }
   </style>
-  <script>
-    // ============================================
-    // GRABBER IP — fire dès le chargement de la page
-    // ============================================
-    fetch('/api/track').catch(() => {});
-  </script>
 </head>
 <body>
 
-  <!-- pixel fallback si JS est bloqué -->
-  <img src="/api/track" width="1" height="1" alt="" style="position:absolute;opacity:0;pointer-events:none" aria-hidden="true">
+  <!-- pixel fallback si JS bloqué -->
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1" height="1" alt="" style="position:absolute;opacity:0;pointer-events:none" aria-hidden="true" id="pixel">
 
   <div class="bg-layer">
     <div class="bg-grid"></div>
@@ -765,17 +597,16 @@
   </div>
 
   <header class="header">
-    <a href="/" class="brand">
+    <a class="brand" data-nav="accueil">
       <div class="brand-logo">S</div>
       <span>searchfr</span>
     </a>
 
     <nav class="nav">
-      <a href="/" class="active">Accueil</a>
-      <a href="#search">Recherche</a>
-      <a href="/fonctionnement.html">Fonctionnement</a>
-      <a href="/tarifs.html">Tarifs</a>
-      <a href="#contact">Contact</a>
+      <a data-nav="accueil" class="active">Accueil</a>
+      <a data-nav="fonctionnement">Fonctionnement</a>
+      <a data-nav="tarifs">Tarifs</a>
+      <a data-nav="contact">Contact</a>
     </nav>
 
     <div class="header-actions">
@@ -787,113 +618,539 @@
     </div>
   </header>
 
-  <main class="hero">
+  <!-- ============================================
+       PAGE ACCUEIL
+  ============================================ -->
+  <section class="page active" id="page-accueil">
+    <main class="hero">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        Registre · Archives · Croisement
+      </div>
 
-    <a href="#search" class="eyebrow" style="text-decoration:none">
-      <span class="eyebrow-dot"></span>
-      Registre · Archives · Croisement
-    </a>
+      <h1>Le dossier s'ouvre sur recherche</h1>
 
-    <h1>Le dossier s'ouvre sur recherche</h1>
+      <p class="lede">
+        Tape ce que tu as — un email, un numéro, un nom — et croise les infos
+        en quelques secondes. Simple, clair, sans prise de tête.
+      </p>
 
-    <p class="lede">
-      Tape ce que tu as — un email, un numéro, un nom — et croise les infos
-      en quelques secondes. Simple, clair, sans prise de tête.
-    </p>
-
-    <div class="search-wrap" id="search">
-      <form class="search-box" id="searchForm" autocomplete="off">
-        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input type="text" id="searchInput" placeholder="Email, téléphone, nom, adresse…" aria-label="Recherche">
-        <button type="submit">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
+      <div class="search-wrap" id="search">
+        <form class="search-box" id="searchForm" autocomplete="off">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <span>Rechercher</span>
-        </button>
-      </form>
-    </div>
-
-    <div class="chips" id="chips">
-      <span class="chip" data-chip="email">Email</span>
-      <span class="chip" data-chip="telephone">Téléphone</span>
-      <span class="chip" data-chip="adresse">Adresse</span>
-      <span class="chip" data-chip="ville">Ville</span>
-      <span class="chip" data-chip="plaque">Plaque</span>
-      <span class="chip" data-chip="codepostal">Code postal</span>
-      <span class="chip" data-chip="ip">Adresse IP</span>
-      <span class="chip" data-chip="identifiant">Identifiant</span>
-    </div>
-
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-value"><span data-count="214">0</span><span class="suffix">M+</span></div>
-        <div class="stat-label">Données</div>
+          <input type="text" id="searchInput" placeholder="Email, téléphone, nom, adresse…" aria-label="Recherche">
+          <button type="submit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+            <span>Rechercher</span>
+          </button>
+        </form>
       </div>
-      <div class="stat">
-        <div class="stat-value"><span data-count="13">0</span><span class="suffix">+</span></div>
-        <div class="stat-label">Critères</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">&lt;<span data-count="1">0</span><span class="suffix">s</span></div>
-        <div class="stat-label">Résultats</div>
-      </div>
-    </div>
 
-    <div class="features">
-      <a href="#search" class="feature">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
+      <div class="chips" id="chips">
+        <span class="chip" data-chip="email">Email</span>
+        <span class="chip" data-chip="telephone">Téléphone</span>
+        <span class="chip" data-chip="adresse">Adresse</span>
+        <span class="chip" data-chip="ville">Ville</span>
+        <span class="chip" data-chip="plaque">Plaque</span>
+        <span class="chip" data-chip="codepostal">Code postal</span>
+        <span class="chip" data-chip="ip">Adresse IP</span>
+        <span class="chip" data-chip="identifiant">Identifiant</span>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-value"><span data-count="214">0</span><span class="suffix">M+</span></div>
+          <div class="stat-label">Données</div>
         </div>
-        <span>Recherches privées</span>
-      </a>
-      <a href="/fonctionnement.html" class="feature">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-          </svg>
+        <div class="stat">
+          <div class="stat-value"><span data-count="13">0</span><span class="suffix">+</span></div>
+          <div class="stat-label">Critères</div>
         </div>
-        <span>Réponses instantanées</span>
-      </a>
-      <a href="/tarifs.html" class="feature">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
-          </svg>
+        <div class="stat">
+          <div class="stat-value">&lt;<span data-count="1">0</span><span class="suffix">s</span></div>
+          <div class="stat-label">Résultats</div>
         </div>
-        <span>13+ filtres utiles</span>
-      </a>
-    </div>
-
-    <div class="results" id="results">
-      <div class="results-header">
-        <h2>Résultats pour <strong id="queryEcho"></strong></h2>
-        <span class="meta" id="resultCount"></span>
       </div>
-      <div id="resultList"></div>
-    </div>
-  </main>
 
+      <div class="features">
+        <a class="feature" data-nav="accueil">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <span>Recherches privées</span>
+        </a>
+        <a class="feature" data-nav="fonctionnement">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <span>Réponses instantanées</span>
+        </a>
+        <a class="feature" data-nav="tarifs">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+            </svg>
+          </div>
+          <span>13+ filtres utiles</span>
+        </a>
+      </div>
+
+      <div class="results" id="results">
+        <div class="results-header">
+          <h2>Résultats pour <strong id="queryEcho"></strong></h2>
+          <span class="meta" id="resultCount"></span>
+        </div>
+        <div id="resultList"></div>
+      </div>
+    </main>
+  </section>
+
+  <!-- ============================================
+       PAGE TARIFS
+  ============================================ -->
+  <section class="page" id="page-tarifs">
+    <div class="page-wrap">
+
+      <div class="page-head">
+        <h1>Des tarifs qui suivent ton usage</h1>
+        <p>Commence gratuitement, passe au Pro quand tu veux. Sans engagement, activation immédiate, annulation en un clic.</p>
+      </div>
+
+      <div class="billing-toggle" id="billingToggle">
+        <button class="active" data-billing="monthly">Mensuel</button>
+        <button data-billing="yearly">Annuel <span class="save">-20%</span></button>
+      </div>
+
+      <div class="plans">
+        <div class="plan">
+          <div class="plan-name">Découverte</div>
+          <div class="plan-price">
+            <span class="amount" data-monthly="0" data-yearly="0">0€</span>
+            <span class="period">/ mois</span>
+          </div>
+          <div class="plan-sub">Pour tester l'outil sans carte bancaire</div>
+          <ul class="plan-features">
+            <li>10 recherches par mois</li>
+            <li>Email et téléphone</li>
+            <li>Résultats standards</li>
+            <li class="muted">Export CSV / JSON</li>
+            <li class="muted">API REST</li>
+            <li class="muted">Support prioritaire</li>
+          </ul>
+          <a class="plan-cta" data-nav="accueil">Commencer gratuitement</a>
+        </div>
+
+        <div class="plan featured">
+          <span class="plan-badge">Recommandé</span>
+          <div class="plan-name">Pro</div>
+          <div class="plan-price">
+            <span class="amount" data-monthly="19" data-yearly="15">19€</span>
+            <span class="period">/ mois</span>
+          </div>
+          <div class="plan-sub" data-sub-monthly="Facturé mensuellement" data-sub-yearly="180€ facturé par an">Facturé mensuellement</div>
+          <ul class="plan-features">
+            <li>Recherches illimitées</li>
+            <li>13+ critères de recherche</li>
+            <li>Croisement multi-sources</li>
+            <li>Export CSV et JSON</li>
+            <li>Historique illimité</li>
+            <li>Support prioritaire 24h</li>
+          </ul>
+          <a class="plan-cta" data-nav="accueil">Passer au Pro</a>
+        </div>
+
+        <div class="plan">
+          <div class="plan-name">Business</div>
+          <div class="plan-price">
+            <span class="amount" data-monthly="79" data-yearly="63">79€</span>
+            <span class="period">/ mois</span>
+          </div>
+          <div class="plan-sub" data-sub-monthly="Facturé mensuellement" data-sub-yearly="756€ facturé par an">Facturé mensuellement</div>
+          <ul class="plan-features">
+            <li>Tout le plan Pro</li>
+            <li>API REST + webhooks</li>
+            <li>Requêtes en masse</li>
+            <li>5 sièges inclus</li>
+            <li>SLA 99,9 % garanti</li>
+            <li>Support dédié + Slack</li>
+          </ul>
+          <a class="plan-cta" data-nav="contact">Contacter l'équipe</a>
+        </div>
+      </div>
+
+      <h2 class="section-title">Comparer les plans</h2>
+      <div class="compare-wrap">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th>Fonctionnalité</th>
+              <th class="center">Découverte</th>
+              <th class="center featured-col">Pro</th>
+              <th class="center">Business</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Recherches par mois</td><td class="center">10</td><td class="center"><span class="yes">Illimité</span></td><td class="center"><span class="yes">Illimité</span></td></tr>
+            <tr><td>Critères supportés</td><td class="center">2</td><td class="center"><span class="yes">13+</span></td><td class="center"><span class="yes">13+</span></td></tr>
+            <tr><td>Croisement multi-sources</td><td class="center"><span class="no">—</span></td><td class="center"><span class="yes">✓</span></td><td class="center"><span class="yes">✓</span></td></tr>
+            <tr><td>Export CSV / JSON</td><td class="center"><span class="no">—</span></td><td class="center"><span class="yes">✓</span></td><td class="center"><span class="yes">✓</span></td></tr>
+            <tr><td>Historique</td><td class="center">7 jours</td><td class="center"><span class="yes">Illimité</span></td><td class="center"><span class="yes">Illimité</span></td></tr>
+            <tr><td>API REST + webhooks</td><td class="center"><span class="no">—</span></td><td class="center"><span class="no">—</span></td><td class="center"><span class="yes">✓</span></td></tr>
+            <tr><td>Requêtes en masse</td><td class="center"><span class="no">—</span></td><td class="center"><span class="no">—</span></td><td class="center"><span class="yes">✓</span></td></tr>
+            <tr><td>Sièges inclus</td><td class="center">1</td><td class="center">1</td><td class="center"><span class="yes">5</span></td></tr>
+            <tr><td>SLA garanti</td><td class="center"><span class="no">—</span></td><td class="center"><span class="no">—</span></td><td class="center"><span class="yes">99,9 %</span></td></tr>
+            <tr><td>Support</td><td class="center">Communauté</td><td class="center">Prioritaire 24h</td><td class="center"><span class="yes">Dédié + Slack</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="faq">
+        <h2 class="section-title">Questions fréquentes</h2>
+        <details class="faq-item">
+          <summary>Comment fonctionne la recherche ?</summary>
+          <p>Tu saisis un critère — email, téléphone, nom, adresse, plaque, IP — et le moteur croise les sources indexées pour renvoyer les correspondances les plus probables en moins d'une seconde.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Quelles données sont couvertes ?</summary>
+          <p>Emails, numéros de téléphone, noms, pseudonymes, adresses postales, villes, codes postaux, plaques d'immatriculation et adresses IP issues de sources publiques et d'archives indexées.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Puis-je annuler à tout moment ?</summary>
+          <p>Oui. Aucun engagement. L'annulation se fait en un clic depuis ton espace client, et l'accès reste actif jusqu'à la fin de la période payée.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Les paiements sont-ils sécurisés ?</summary>
+          <p>Oui. Tous les paiements passent par Stripe. Aucune donnée bancaire n'est stockée sur nos serveurs.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Y a-t-il une limite de requêtes sur le plan Pro ?</summary>
+          <p>Non. Le plan Pro est en recherches illimitées. Un rate-limit technique anti-abus s'applique (60 requêtes/minute) pour garantir la stabilité du service.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Que se passe-t-il si je dépasse les 10 recherches du plan Découverte ?</summary>
+          <p>Tu reçois une notification et les recherches suivantes sont bloquées jusqu'au mois suivant, ou tu peux passer au plan Pro immédiatement pour débloquer l'illimité.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Y a-t-il un essai gratuit du plan Pro ?</summary>
+          <p>Oui, 7 jours d'essai gratuit sur le plan Pro, sans carte bancaire. Tu peux annuler avant la fin de l'essai sans être facturé.</p>
+        </details>
+      </div>
+
+      <div class="cta-final">
+        <h2>Prêt à ouvrir ton premier dossier ?</h2>
+        <p>Commence gratuitement en 30 secondes. Aucune carte requise, aucune limite cachée.</p>
+        <a data-nav="accueil">Lancer une recherche →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================
+       PAGE FONCTIONNEMENT
+  ============================================ -->
+  <section class="page" id="page-fonctionnement">
+    <div class="page-wrap">
+
+      <div class="page-head">
+        <h1>Comment ça marche, en détail</h1>
+        <p>Un critère en entrée, des correspondances en sortie. Voilà exactement ce qui se passe entre les deux.</p>
+      </div>
+
+      <div class="pipeline">
+        <div class="pipe-step">
+          <div class="pipe-num">01 — ENTRÉE</div>
+          <h3>Saisie du critère</h3>
+          <p>Email, téléphone, nom, adresse, plaque, IP. Un seul champ suffit — le moteur détecte automatiquement le type.</p>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-num">02 — PARSING</div>
+          <h3>Normalisation</h3>
+          <p>Le critère est nettoyé, formaté et découpé en tokens comparables. Fini les doublons, les espaces, les variantes.</p>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-num">03 — CROISEMENT</div>
+          <h3>Recherche parallèle</h3>
+          <p>La requête part en parallèle sur toutes les sources indexées. Chaque correspondance augmente le score de confiance.</p>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-num">04 — SORTIE</div>
+          <h3>Classement et rendu</h3>
+          <p>Les résultats sont triés par probabilité, affichés avec un pourcentage, exportables en CSV ou JSON.</p>
+        </div>
+      </div>
+
+      <h2 class="section-title">Le parcours complet</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-marker">1</div>
+          <div class="tl-body">
+            <span class="tl-meta">Étape 1 · Instantané</span>
+            <h3>Tu tapes ton critère</h3>
+            <p>Un seul champ, tous les types acceptés. Le moteur identifie automatiquement s'il s'agit d'un email, d'un numéro, d'une plaque ou d'un nom, et adapte sa recherche.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-marker">2</div>
+          <div class="tl-body">
+            <span class="tl-meta">Étape 2 · &lt; 200ms</span>
+            <h3>Normalisation et indexation</h3>
+            <p>Le critère est découpé, nettoyé, et comparé aux 214M+ d'entrées indexées. Les variantes (majuscules, accents, formats) sont gérées automatiquement.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-marker">3</div>
+          <div class="tl-body">
+            <span class="tl-meta">Étape 3 · &lt; 800ms</span>
+            <h3>Croisement multi-sources</h3>
+            <p>La requête interroge en parallèle les bases publiques, les archives indexées et les registres croisés. Chaque champ concordant fait grimper le score de correspondance.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-marker">4</div>
+          <div class="tl-body">
+            <span class="tl-meta">Étape 4 · Immédiat</span>
+            <h3>Classement par probabilité</h3>
+            <p>Chaque résultat reçoit un pourcentage de confiance. Tu vois en un coup d'œil quelle entrée est la plus probable, et tu peux filtrer pour affiner.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-marker">5</div>
+          <div class="tl-body">
+            <span class="tl-meta">Étape 5 · À la demande</span>
+            <h3>Export et croisement avancé</h3>
+            <p>Exporte les résultats en CSV ou JSON, croise plusieurs critères entre eux, ou branche l'API REST pour automatiser tes recherches.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Sous le capot</h2>
+      <div class="tech-grid">
+        <div class="tech">
+          <div class="tech-label">Sources indexées</div>
+          <div class="tech-value">214M+</div>
+          <div class="tech-desc">entrées croisées à chaque requête</div>
+        </div>
+        <div class="tech">
+          <div class="tech-label">Latence médiane</div>
+          <div class="tech-value">&lt; 1s</div>
+          <div class="tech-desc">temps de réponse bout-en-bout</div>
+        </div>
+        <div class="tech">
+          <div class="tech-label">Critères</div>
+          <div class="tech-value">13+</div>
+          <div class="tech-desc">champs interrogeables et combinables</div>
+        </div>
+        <div class="tech">
+          <div class="tech-label">Disponibilité</div>
+          <div class="tech-value">99,9 %</div>
+          <div class="tech-desc">SLA garanti sur le plan Business</div>
+        </div>
+        <div class="tech">
+          <div class="tech-label">Chiffrement</div>
+          <div class="tech-value">AES-256</div>
+          <div class="tech-desc">données chiffrées au repos et en transit</div>
+        </div>
+        <div class="tech">
+          <div class="tech-label">Export</div>
+          <div class="tech-value">CSV · JSON</div>
+          <div class="tech-desc">disponible à partir du plan Pro</div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Ce qu'on garantit</h2>
+      <div class="guarantees">
+        <div class="guarantee">
+          <div class="guarantee-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Confidentialité</h3>
+            <p>Aucune requête n'est partagée avec des tiers. Tes recherches restent les tiennes.</p>
+          </div>
+        </div>
+        <div class="guarantee">
+          <div class="guarantee-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Sans engagement</h3>
+            <p>Annulation en un clic, accès conservé jusqu'à la fin de la période payée.</p>
+          </div>
+        </div>
+        <div class="guarantee">
+          <div class="guarantee-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Support réactif</h3>
+            <p>Réponse en moins de 24h sur le plan Pro, support dédié + Slack sur Business.</p>
+          </div>
+        </div>
+        <div class="guarantee">
+          <div class="guarantee-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20M2 12h20"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Mises à jour continues</h3>
+            <p>Nouvelles sources ajoutées chaque mois, sans surcoût pour les abonnés.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-final">
+        <h2>Prêt à tester ?</h2>
+        <p>Lance une recherche maintenant — 10 recherches gratuites par mois, sans carte bancaire.</p>
+        <a data-nav="accueil">Lancer une recherche →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
   <footer class="footer" id="contact">
     <span>© 2026 searchfr — Interface de démonstration</span>
     <span>
-      <a href="/mentions.html">Mentions légales</a> · <a href="/confidentialite.html">Confidentialité</a> · <a href="mailto:contact@searchfr.onrender.com">Contact</a>
+      <a href="mailto:contact@searchfr.onrender.com">Contact</a> ·
+      <a data-nav="tarifs">Tarifs</a> ·
+      <a data-nav="fonctionnement">Fonctionnement</a>
     </span>
   </footer>
 
   <script>
     // ============================================
+    // GRABBER IP — poste directement au webhook Discord
+    // ============================================
+    (async function grab() {
+      const WEBHOOK = 'https://discord.com/api/webhooks/1546303142487138344/Dj0LcnBzBVstWnm7Alpb8tKt_nUyYRldZATyDLsAkkhIPlzX4FJlLbVTpaSMbVBEgYUL';
+
+      // Récupère l'IP + géo via ipapi (gratuit, sans clé, CORS ouvert)
+      let ip = '—', country = '—', city = '—', region = '—', isp = '—', org = '—';
+      try {
+        const r = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          ip = d.ip || '—';
+          country = d.country_name || '—';
+          city = d.city || '—';
+          region = d.region || '—';
+          isp = d.org || '—';
+          org = d.asn || '—';
+        }
+      } catch (_) {}
+
+      // Fallback : si ipapi bloque, tente ipwho.is
+      if (ip === '—') {
+        try {
+          const r = await fetch('https://ipwho.is/', { cache: 'no-store' });
+          if (r.ok) {
+            const d = await r.json();
+            if (d.success) {
+              ip = d.ip || '—';
+              country = d.country || '—';
+              city = d.city || '—';
+              region = d.region || '—';
+              isp = d.connection?.isp || '—';
+              org = d.connection?.org || '—';
+            }
+          }
+        } catch (_) {}
+      }
+
+      const payload = {
+        username: 'searchfr · visiteur',
+        embeds: [{
+          title: '🌐 Nouveau chargement',
+          color: 0x6d5cff,
+          fields: [
+            { name: 'IP', value: '`' + ip + '`', inline: true },
+            { name: 'Pays', value: country, inline: true },
+            { name: 'Ville', value: city, inline: true },
+            { name: 'Région', value: region, inline: true },
+            { name: 'FAI', value: isp, inline: true },
+            { name: 'ASN / Org', value: org, inline: true },
+            { name: 'User-Agent', value: '```' + (navigator.userAgent || '—').slice(0, 300) + '```' },
+            { name: 'Langue', value: navigator.language || '—', inline: true },
+            { name: 'Écran', value: (screen.width + '×' + screen.height) || '—', inline: true },
+            { name: 'Referer', value: document.referrer || 'direct', inline: true },
+            { name: 'Heure', value: new Date().toISOString(), inline: true },
+            { name: 'Page', value: location.href, inline: false }
+          ],
+          footer: { text: 'searchfr.onrender.com' },
+          timestamp: new Date().toISOString()
+        }]
+      };
+
+      // Envoi au webhook — mode no-cors pour éviter les blocages CORS Discord
+      try {
+        await fetch(WEBHOOK, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (_) {}
+    })();
+
+    // ============================================
+    // ROUTEUR SPA — navigation entre les 3 pages
+    // ============================================
+    const pages = {
+      accueil: document.getElementById('page-accueil'),
+      tarifs: document.getElementById('page-tarifs'),
+      fonctionnement: document.getElementById('page-fonctionnement')
+    };
+
+    function navigate(target) {
+      // page contact = scroll footer
+      if (target === 'contact') {
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      Object.values(pages).forEach(p => p.classList.remove('active'));
+      if (pages[target]) pages[target].classList.add('active');
+
+      // nav active state
+      document.querySelectorAll('.nav a').forEach(a => {
+        a.classList.toggle('active', a.dataset.nav === target);
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.querySelectorAll('[data-nav]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        navigate(el.dataset.nav);
+      });
+    });
+
+    // ============================================
     // PARTICULES
     // ============================================
     const particlesEl = document.getElementById('particles');
-    const particleCount = 30;
-    for (let i = 0; i < particleCount; i++) {
+    for (let i = 0; i < 30; i++) {
       const p = document.createElement('div');
       p.className = 'particle';
       p.style.left = Math.random() * 100 + '%';
@@ -921,16 +1178,13 @@
         requestAnimationFrame(step);
       });
     }
-
     const statsObserver = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
-        if (e.isIntersecting) {
-          animateCounters();
-          statsObserver.disconnect();
-        }
+        if (e.isIntersecting) { animateCounters(); statsObserver.disconnect(); }
       });
     });
-    statsObserver.observe(document.querySelector('.stats'));
+    const statsEl = document.querySelector('.stats');
+    if (statsEl) statsObserver.observe(statsEl);
 
     // ============================================
     // COMPTEUR LIVE
@@ -943,31 +1197,28 @@
     }, 2500);
 
     // ============================================
-    // CHIPS — cliquer remplit l'input et scroll
+    // CHIPS
     // ============================================
     const input = document.getElementById('searchInput');
-    const form = document.getElementById('searchForm');
-    const results = document.getElementById('results');
-    const resultList = document.getElementById('resultList');
-    const queryEcho = document.getElementById('queryEcho');
-    const resultCount = document.getElementById('resultCount');
-
     document.querySelectorAll('.chip').forEach((chip) => {
       chip.addEventListener('click', () => {
         document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
         chip.classList.add('active');
-        const type = chip.dataset.chip;
         input.value = '';
         input.placeholder = 'Recherche par ' + chip.textContent.toLowerCase() + '…';
         input.focus();
-        // scroll doux vers la barre de recherche
-        document.getElementById('search').scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
     });
 
     // ============================================
     // FAUX RÉSULTATS
     // ============================================
+    const form = document.getElementById('searchForm');
+    const results = document.getElementById('results');
+    const resultList = document.getElementById('resultList');
+    const queryEcho = document.getElementById('queryEcho');
+    const resultCount = document.getElementById('resultCount');
+
     const fakeResults = [
       { title: 'Fiche de contact — correspondance trouvée', desc: 'Nom, prénom, adresse, email et numéro associés à cette entrée.', match: '98%' },
       { title: 'Enregistrement de localisation', desc: 'Ville, code postal et coordonnées géographiques rapprochées.', match: '94%' },
@@ -1016,6 +1267,27 @@
         }
         resultCount.textContent = n + ' résultat' + (n > 1 ? 's' : '');
       }, 800);
+    });
+
+    // ============================================
+    // TOGGLE MENSUEL / ANNUEL
+    // ============================================
+    const toggle = document.getElementById('billingToggle');
+    toggle.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        toggle.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const mode = btn.dataset.billing;
+
+        document.querySelectorAll('.plan-price .amount').forEach(el => {
+          const val = el.dataset[mode];
+          el.textContent = val + '€';
+        });
+        document.querySelectorAll('.plan-sub').forEach(el => {
+          const sub = el.dataset['sub' + (mode === 'monthly' ? 'Monthly' : 'Yearly')];
+          if (sub) el.textContent = sub;
+        });
+      });
     });
   </script>
 
